@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synactive - Cybersecurity & Compliance Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0D9488;
+            --primary-light: #14B8A6;
+            --secondary: #00663E;
+            --dark: #131313;
+            --light: #F7F7F7;
+            --text: #131313;
+            --text-subtle: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 247, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(13, 148, 136, 0.15);
+            padding: 1rem 2rem;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { filter: drop-shadow(0 0 0 rgba(13, 148, 136, 0.3)); }
+            50% { filter: drop-shadow(0 0 15px rgba(13, 148, 136, 0.5)); }
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light) 0%, rgba(13, 148, 136, 0.03) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 102, 62, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(40px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+            line-height: 1.2;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-subtle);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.25);
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        /* ========== SERVICES ========== */
+        #services {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 80px;
+            position: relative;
+        }
+
+        #services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .section-title {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            animation: fadeInDown 0.8s ease-out;
+            z-index: 1;
+            color: var(--text);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1rem auto 0;
+            animation: expandWidth 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 60px;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out both;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) rotateX(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.08), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(13, 148, 136, 0.08) 0%, transparent 80%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(13, 148, 136, 0.15);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(0, 102, 62, 0.08));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(13, 148, 136, 0.2);
+            animation: iconBounce 2s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(1) .service-icon-wrapper { animation-delay: 0s; }
+        .service-card:nth-child(2) .service-icon-wrapper { animation-delay: 0.2s; }
+        .service-card:nth-child(3) .service-icon-wrapper { animation-delay: 0.4s; }
+        .service-card:nth-child(4) .service-icon-wrapper { animation-delay: 0.6s; }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-icon-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(13, 148, 136, 0.15), transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(13, 148, 136, 0.2));
+        }
+
+        .service-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .service-card h3 {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+            transition: color 0.3s;
+        }
+
+        .service-card:hover h3 {
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-subtle);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ========== ABOUT ========== */
+        #about {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 80px;
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            animation: fadeInLeft 0.8s ease-out;
+            color: var(--text);
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .about-text p {
+            color: var(--text-subtle);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .about-visual {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out;
+            perspective: 1000px;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px) rotateY(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotateY(0deg);
+            }
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            opacity: 0.08;
+            animation: rotate 25s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .about-visual-box {
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(0, 102, 62, 0.06));
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(13, 148, 136, 0.1);
+        }
+
+        .stat {
+            margin: 2rem 0;
+            animation: fadeIn 0.8s ease-out both;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.2s; }
+        .stat:nth-child(2) { animation-delay: 0.4s; }
+        .stat:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .stat-number {
+            font-family: 'Lato', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            animation: countUp 2.5s ease-out;
+            display: inline-block;
+        }
+
+        @keyframes countUp {
+            from { 
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .stat-label {
+            color: var(--text-subtle);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        /* ========== CONTACT ========== */
+        #contact {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            scroll-margin-top: 80px;
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        #contact .section-title {
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            border: 2px solid var(--primary);
+            animation: slideUp 0.8s ease-out 0.2s both;
+            box-shadow: 0 15px 50px rgba(13, 148, 136, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.04), transparent);
+            animation: contactShimmer 3s infinite;
+        }
+
+        @keyframes contactShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .contact-box p {
+            color: var(--text-subtle);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .email-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            transition: left 0.3s;
+            z-index: -1;
+        }
+
+        .email-link:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.3);
+        }
+
+        .email-link:hover::before {
+            left: 0;
+        }
+
+        .email-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .email-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .email-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .email-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .email-address {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ========== SCROLL ANIMATION ========== */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealOnScroll 0.8s ease-out forwards;
+        }
+
+        @keyframes revealOnScroll {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                gap: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                margin-top: 150px;
+                min-height: 70vh;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual-box {
+                padding: 2rem;
+            }
+
+            .contact-box {
+                padding: 2rem;
+            }
+
+            #services, #about, #contact {
+                padding: 4rem 1rem;
+            }
+
+            .email-link {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .email-text {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="synactive-logo.png" alt="Synactive Logo">
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Enterprise Security You Can Trust</h1>
+            <p>Comprehensive cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <!-- Penetration Testing -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3>Penetration Testing</h3>
+                <p>Comprehensive security assessments to identify vulnerabilities in your systems and applications before attackers do.</p>
+            </div>
+
+            <!-- Vulnerability Assessment -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.72-7 8.77V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3>Vulnerability Assessment</h3>
+                <p>In-depth analysis of your infrastructure to detect and prioritize security weaknesses across all attack surfaces.</p>
+            </div>
+
+            <!-- ISO Compliance -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3>ISO Compliance & Audits</h3>
+                <p>Expert guidance and auditing for ISO 27001, ISO 42001, and other compliance frameworks to ensure regulatory alignment.</p>
+            </div>
+
+            <!-- AI Security - ROBOT ICON -->
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Robot head -->
+                            <rect x="4" y="2" width="16" height="10" rx="1"/>
+                            <!-- Left eye -->
+                            <circle cx="8.5" cy="6" r="1.5"/>
+                            <!-- Right eye -->
+                            <circle cx="15.5" cy="6" r="1.5"/>
+                            <!-- Mouth -->
+                            <line x1="8" y1="9" x2="16" y2="9"/>
+                            <!-- Robot body -->
+                            <rect x="6" y="12" width="12" height="8" rx="1"/>
+                            <!-- Left arm -->
+                            <rect x="2" y="13" width="4" height="2" rx="1"/>
+                            <!-- Right arm -->
+                            <rect x="18" y="13" width="4" height="2" rx="1"/>
+                            <!-- Left leg -->
+                            <rect x="7" y="20" width="2" height="3" rx="0.5"/>
+                            <!-- Right leg -->
+                            <rect x="15" y="20" width="2" height="3" rx="0.5"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3>AI Security Solutions</h3>
+                <p>Advanced AI-driven security tools to detect threats, analyze risks, and automate your security operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Why Choose Synactive?</h2>
+                <p>We combine deep technical expertise with industry best practices to deliver security solutions that actually work. Our team of certified security professionals brings years of experience across Fortune 500 companies and emerging startups.</p>
+                <p>We don't just identify problems — we provide actionable solutions and ongoing support to keep your business secure in an evolving threat landscape.</p>
+            </div>
+            <div class="about-visual">
+                <div class="about-visual-box">
+                    <div class="stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Security Certifications</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Assessments Completed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-box">
+                <p>Ready to secure your enterprise? Reach out to our team for a personalized security consultation.</p>
+                <a href="mailto:contact@synactive.com" class="email-link">
+                    <div class="email-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Envelope -->
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <!-- Letter line -->
+                            <polyline points="22 6 12 13 2 6"/>
+                        </svg>
+                    </div>
+                    <div class="email-text">
+                        <span class="email-label">Send us an email</span>
+                        <span class="email-address">contact@synactive.com</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Synactive. All rights reserved. | Enterprise Security & Compliance Solutions</p>
+    </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animation
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+
+            // Add mouse tracking for gradient effect
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', x + 'px');
+                card.style.setProperty('--mouse-y', y + 'px');
+            });
+        });
+
+        // Animated number counter
+        function animateCounters() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const text = stat.textContent;
+                const isPercentage = text.includes('%');
+                const isPlus = text.includes('+');
+                let target = parseInt(text);
+                let current = 0;
+                const increment = target / 30;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + (isPlus ? '+' : isPercentage ? '%' : '');
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (isPlus ? '+' : isPercentage ? '%' : '');
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger counters when about section is visible
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            aboutObserver.observe(aboutSection);
+        }
+    </script>
+</body>
+</html>
