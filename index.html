@@ -32,6 +32,8 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         /* ========== HEADER ========== */
@@ -41,14 +43,18 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 0.8rem 2rem;
+            padding: 0.6rem 1rem;
             transition: all 0.4s ease;
-            background: transparent;
+            background: rgba(10, 21, 39, 0);
             border-bottom: none;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         header.scrolled {
-            background: rgba(10, 21, 39, 0.95);
+            background: rgba(10, 21, 39, 0.3);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(12, 188, 185, 0.2);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -61,16 +67,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
+            padding: 0;
+            min-width: 0;
         }
 
         .logo {
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.5rem;
             transition: transform 0.3s;
             flex-shrink: 0;
+            min-width: 0;
         }
 
         .logo:hover {
@@ -78,15 +87,19 @@
         }
 
         .logo img {
-            height: 90px;
+            height: 55px;
             width: auto;
-            filter: drop-shadow(0 0 0 rgba(12, 188, 185, 0)) brightness(0.95);
-            transition: filter 0.3s, opacity 0.3s;
-            opacity: 0.9;
+            filter: none;
+            transition: opacity 0.3s;
+            opacity: 0.85;
+            background: transparent;
+            object-fit: contain;
+            padding: 0;
+            flex-shrink: 0;
         }
 
         header.scrolled .logo img {
-            filter: drop-shadow(0 2px 8px rgba(12, 188, 185, 0.3)) brightness(1);
+            filter: none;
             opacity: 1;
         }
 
@@ -179,7 +192,6 @@
             background: linear-gradient(135deg, #0a1527 0%, #0d2849 50%, #051220 100%);
         }
 
-        /* Grid background pattern */
         .hero::before {
             content: '';
             position: absolute;
@@ -219,12 +231,8 @@
         }
 
         @keyframes fadeInOverlay {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero-content {
@@ -260,51 +268,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            text-shadow: none;
-            box-shadow: 0 8px 20px rgba(12, 188, 185, 0.4);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s;
-            z-index: -1;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(12, 188, 185, 0.6);
-            background: rgba(12, 188, 185, 0.9);
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ========== SERVICES ========== */
@@ -337,14 +302,8 @@
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .services-grid {
@@ -378,14 +337,8 @@
         .service-card:nth-child(4) { animation-delay: 0.4s; }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .service-card::before {
@@ -502,14 +455,8 @@
         }
 
         @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .about-text p {
@@ -526,14 +473,8 @@
         }
 
         @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .about-visual::before {
@@ -574,14 +515,8 @@
         .stat:nth-child(3) { animation-delay: 0.6s; }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .stat-number {
@@ -638,14 +573,14 @@
         .email-link {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 3rem;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
             background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             transition: all 0.3s;
             border: 2px solid var(--primary);
         }
@@ -756,11 +691,15 @@
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             header {
-                padding: 1rem 1.5rem;
+                padding: 0.5rem 0.8rem;
             }
 
             .header-content {
-                gap: 1rem;
+                gap: 0.4rem;
+            }
+
+            .logo img {
+                height: 40px;
             }
 
             .menu-toggle {
@@ -769,37 +708,39 @@
 
             nav {
                 position: fixed;
-                top: 65px;
+                top: 60px;
                 left: 0;
                 right: 0;
                 flex-direction: column;
-                background: rgba(10, 21, 39, 0.98);
+                background: rgba(10, 21, 39, 0.95);
                 backdrop-filter: blur(10px);
-                padding: 2rem 1.5rem;
-                gap: 1.5rem;
+                padding: 1.5rem 1rem;
+                gap: 1rem;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease;
                 border-bottom: 1px solid rgba(12, 188, 185, 0.15);
+                width: 100%;
             }
 
             nav.active {
-                max-height: 500px;
+                max-height: 400px;
             }
 
             nav a {
-                padding: 1rem 0;
+                padding: 0.8rem 0;
                 border-bottom: 1px solid rgba(12, 188, 185, 0.1);
                 text-shadow: none;
+                font-size: 0.9rem;
             }
 
             .hero-content {
-                margin-top: 65px;
+                margin-top: 70px;
                 padding: 2rem 1.5rem;
             }
 
             #services, #about, #contact {
-                padding: 4rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             .services-grid {
@@ -820,6 +761,68 @@
                 flex-direction: column;
             }
         }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.4rem 0.6rem;
+            }
+
+            .header-content {
+                gap: 0.2rem;
+            }
+
+            .logo img {
+                height: 32px;
+            }
+
+            nav {
+                padding: 1rem 0.8rem;
+                gap: 0.8rem;
+                top: 55px;
+            }
+
+            nav a {
+                padding: 0.7rem 0;
+                font-size: 0.85rem;
+            }
+
+            .menu-toggle span {
+                width: 22px;
+                height: 2.5px;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 5vw, 3rem);
+            }
+
+            .hero p {
+                font-size: clamp(0.9rem, 2vw, 1rem);
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 1.8rem;
+            }
+
+            #services, #about, #contact {
+                padding: 2rem 1rem;
+            }
+
+            footer {
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            .footer-content {
+                gap: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -827,12 +830,16 @@
     <header>
         <div class="header-content">
             <a href="#" class="logo">
-                <img src="synactive-logo.png" alt="Synactive Logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="#0cbcb9" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="12" fill="none" stroke="#0cbcb9" stroke-width="1.5"/>
+                    <text x="20" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0cbcb9">S</text>
+                </svg>
             </a>
             <nav>
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#contact">Get Started</a>
             </nav>
             <button class="menu-toggle">
                 <span></span>
@@ -849,7 +856,6 @@
         <div class="hero-content">
             <h1>Enterprise Security You Can Trust</h1>
             <p>Comprehensive cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements.</p>
-            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
 
@@ -944,18 +950,17 @@
 
     <!-- CONTACT -->
     <section id="contact">
-        <h2 class="section-title">Get in Touch</h2>
+        <h2 class="section-title">Get Started</h2>
         <div class="contact-container">
             <div class="contact-box">
-                <p>Ready to secure your enterprise? Reach out to our team for a personalized security consultation.</p>
-                <a href="mailto:contact@synactive.com" class="email-link">
+                <p>Ready to secure your enterprise? Fill out our form to get started with a personalized security consultation.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScM9klGVeMlmC19Paj2Z99l35VDK4EWIWv4d64d487PgBg-mw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="email-link">
                     <div class="email-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22 6 12 13 2 6"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                     </div>
-                    contact@synactive.com
+                    Get Started
                 </a>
             </div>
         </div>
@@ -981,14 +986,14 @@
                 <h3>Contact</h3>
                 <p><strong>Email:</strong> contact@synactive.com</p>
                 <p><strong>Location:</strong> Islamabad, Pakistan</p>
-                <p><strong>Website:</strong> synactive.vercel.app</p>
+                <p><strong>Website:</strong> synactive.co</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Get Started</a></li>
                     <li><a href="https://www.linkedin.com/company/synactive-co/" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
@@ -1004,7 +1009,6 @@
     </footer>
 
     <script>
-        // Canvas animation for hero background
         const canvas = document.getElementById('heroCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -1015,7 +1019,6 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Particle system with enhanced visibility
         const particles = [];
         const particleCount = 120;
 
@@ -1049,7 +1052,6 @@
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
 
-                // Glow effect
                 ctx.fillStyle = `rgba(12, 188, 185, ${this.opacity * 0.3 * glow})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
@@ -1057,7 +1059,6 @@
             }
         }
 
-        // Initialize particles
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
@@ -1095,7 +1096,6 @@
 
         animate();
 
-        // Navbar scroll effect
         const header = document.querySelector('header');
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
@@ -1108,13 +1108,11 @@
             }
         });
 
-        // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
 
-        // Close menu when link is clicked
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -1122,7 +1120,6 @@
             });
         });
 
-        // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
