@@ -4,38 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Synactive</title>
-    <!-- Make sure this links to your actual CSS file -->
-    <link rel="stylesheet" href="assets/style.css"> 
+    <link rel="stylesheet" href="/assets/style.css"> 
 </head>
 <body>
 
     <!-- HEADER -->
-<header class="main-header">
-  <!-- Brand Logo Only -->
-  <a href="index.html" class="brand-logo">
-    <img src="synactive-logo.png" alt="Synactive" class="logo-icon">
-  </a>
-
-  <!-- Navigation & CTA -->
-  <div class="header-right">
-    <nav>
-      <a href="index.html">Home</a>
-
-      <div class="dropdown">
-        <a href="services.html">Services</a>
-        <div class="dropdown-content">
-          <a href="security-testing.html">Security Testing</a>
-          <a href="compliance-governance.html">Compliance & Governance</a>
-          <a href="ai-security.html">AI Security</a>
-        </div>
+    <header class="main-header">
+      <a href="/index.html" class="brand-logo">
+        <img src="/synactive-logo.png" alt="Synactive" class="logo-icon">
+      </a>
+      <div class="header-right">
+        <nav>
+          <a href="/index.html">Home</a>
+          <div class="dropdown">
+            <a href="/services.html">Services</a>
+            <div class="dropdown-content">
+              <a href="/security-testing.html">Security Testing</a>
+              <a href="/compliance-governance.html">Compliance & Governance</a>
+              <a href="/ai-security.html">AI Security</a>
+            </div>
+          </div>
+          <a href="/about.html">About</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
       </div>
-
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    </header>
 
     <!-- BLOG HERO -->
     <section class="page-hero" style="text-align: center; padding: 80px 20px;">
@@ -46,38 +40,195 @@
     <!-- BLOG GRID -->
     <section class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; padding: 0 20px 80px;">
         
-        <!-- Blog Post 1 -->
-        <article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
-            <div style="height: 180px; background: #0f172a; display: flex; align-items: center; justify-content: center; color: #334155;">[Image Placeholder]</div>
-            <div style="padding: 25px;">
-                <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">AI Security</span>
-                <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Securing LLMs in the Enterprise</h3>
-                <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn the essential strategies for hardening Large Language Models against prompt injection and data leakage before deployment.</p>
-                <a href="#" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
-            </div>
-        </article>
+       <!-- Blog Post 1 -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Penetration Testing vs. Vulnerability Scanning</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">What's the real difference (and why automated scanning alone leaves critical gaps in your defense)?</p>
+        <!-- UPDATE THIS LINE BELOW -->
+        <a href="posts/pentest-vs-vulnerability-scanning.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
 
-        <!-- Blog Post 2 -->
-        <article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
-            <div style="height: 180px; background: #0f172a; display: flex; align-items: center; justify-content: center; color: #334155;">[Image Placeholder]</div>
-            <div style="padding: 25px;">
-                <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
-                <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Navigating ISO 42001</h3>
-                <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">A comprehensive guide to preparing your organization for the new Artificial Intelligence Management System standard.</p>
-                <a href="#" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
-            </div>
-        </article>
+        <!-- Blog Post 2: How Often Should Your Business Get a Penetration Test? -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">How Often Should Your Business Get a Penetration Test?</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn the recommended testing frequencies for web apps, cloud environments, and internal networks, plus the triggers that demand an immediate assessment.</p>
+        <a href="posts/how-often-penetration-test.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
 
-        <!-- Blog Post 3 -->
-        <article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
-            <div style="height: 180px; background: #0f172a; display: flex; align-items: center; justify-content: center; color: #334155;">[Image Placeholder]</div>
-            <div style="padding: 25px;">
-                <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
-                <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Zero-Day Vulnerabilities Explained</h3>
-                <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Why standard vulnerability scanning isn't enough to protect against emerging zero-day threats in custom web applications.</p>
-                <a href="#" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
-            </div>
-        </article>
+        <!-- Blog Post 3: What Happens During a Red Team Engagement -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">What Happens During a Red Team Engagement, Step by Step</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Walk through the 8 stages of a comprehensive red team simulation—from defining objectives and initial access to detection analysis.</p>
+        <a href="posts/red-team-engagement-steps.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+        <!-- Blog Post 4: 5 Real Vulnerabilities We Find Most Often in SMB Networks -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">5 Real Vulnerabilities We Find Most Often in SMB Networks</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Discover the recurring security gaps—from exposed RDP to excessive privileges—that leave under-resourced organizations vulnerable to attacks.</p>
+        <a href="posts/5-real-vulnerabilities-smb.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+       <!-- Blog Post 5: RDP Exposure: The Silent Entry Point Behind Most Ransomware Attacks -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Penetration Testing</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">RDP Exposure: The Silent Entry Point Behind Most Ransomware Attacks</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn why exposed Remote Desktop Protocol configurations act as a primary vector for ransomware, warning signs to watch for, and how to secure them.</p>
+        <a href="posts/rdp-exposure-ransomware.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+        <!-- Blog Post: ISO 27001 for Small Businesses: What It Actually Costs and How Long It Takes -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">ISO 27001 for Small Businesses: Costs & Timeline</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Break down the real costs, implementation timeline, and factors that drive compliance budgets for small businesses.</p>
+        <a href="posts/iso-27001-small-business-costs.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: ISO 27001 vs SOC 2: Which Certification Do Your Clients Actually Ask For? -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">ISO 27001 vs. SOC 2: Which Do Clients Want?</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Compare the core differences in focus, geographic popularity, and audit structures to decide which framework fits your market.</p>
+        <a href="posts/iso-27001-vs-soc-2.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: The Real ISO 27001 Certification Process, Explained Without the Jargon -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">The ISO 27001 Process Explained Without Jargon</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Walk through the 9 clear steps of certification—from initial risk assessment and building your ISMS to the final stage audits.</p>
+        <a href="posts/iso-27001-process-explained.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: ISO 42001 Explained: What AI Governance Means for Non-Tech Companies -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">ISO 42001 Explained: AI Governance for Non-Tech Companies</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn how the first international AI management standard helps businesses govern third-party tools like ChatGPT, Copilot, and CRMs safely.</p>
+        <a href="posts/iso-42001-ai-governance.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: ISO 27701 vs GDPR: Do You Need Both? -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Compliance</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">ISO 27701 vs. GDPR: Do You Need Both?</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Understand the distinction between legal regulatory mandates and voluntary privacy management systems to streamline your compliance.</p>
+        <a href="posts/iso-27701-vs-gdpr.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: Breach Breakdown: How the MGM Resorts Cyberattack Happened -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Industry / Breach Analysis</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Breach Breakdown: The MGM Resorts Cyberattack</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Analyze how attackers leveraged help desk social engineering and identity weaknesses to trigger massive disruptions—and how to stop it.</p>
+        <a href="posts/mgm-resorts-breach-breakdown.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: Why Manufacturing Companies Are Becoming Ransomware's Favorite Target -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Industry / Breach Analysis</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Why Manufacturing Is Ransomware's Favorite Target</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Explore the intersection of IT/OT environments, legacy equipment risks, and the high cost of downtime driving targeted attacks.</p>
+        <a href="posts/manufacturing-ransomware-target.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: What Ransomware Groups Look for Before They Pick a Victim -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Industry / Breach Analysis</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">What Ransomware Groups Look for Before They Pick a Victim</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Discover how attackers strategically evaluate target vulnerabilities, weak identity management, backups, and the ability to pay.</p>
+        <a href="posts/what-ransomware-groups-look-for.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: How to Choose a Cybersecurity Vendor: 10 Questions to Ask Before You Sign -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Business & Buyer Guides</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">How to Choose a Cybersecurity Vendor: 10 Questions to Ask</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn the critical questions to ask regarding industry experience, testing methodology, reporting, data protection, and red flags to avoid.</p>
+        <a href="posts/how-to-choose-cybersecurity-vendor.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: Do Dev Agencies Need a Security Audit? A Guide for Client-Facing Software Teams -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Business & Buyer Guides</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Do Dev Agencies Need a Security Audit?</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn why enterprise clients expect security validation from development agencies and how an audit builds competitive advantage.</p>
+        <a href="posts/dev-agencies-security-audit.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+<!-- Blog Post: The Hidden Cost of Skipping a Security Assessment Before a Big Client Deal -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Business & Buyer Guides</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">The Hidden Cost of Skipping a Security Assessment Before a Deal</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Learn how security questionnaires stall enterprise sales, why proactiveness builds trust, and how to prepare before you pitch.</p>
+        <a href="posts/hidden-cost-skipping-assessment.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: Cybersecurity Due Diligence Checklist for Companies Handling Healthcare or Legal Client Data -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Business & Buyer Guides</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Cybersecurity Due Diligence Checklist for Healthcare & Legal Data</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Evaluate access controls, endpoint security, cloud configurations, and compliance requirements before handling sensitive client data.</p>
+        <a href="posts/due-diligence-checklist-healthcare-legal.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: What "AI Security" Actually Means — Beyond the Buzzword -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">AI Security</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">What "AI Security" Actually Means — Beyond the Buzzword</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Distinguish between using AI for security operations and securing AI systems against data leaks, prompt injection, and model theft.</p>
+        <a href="posts/what-ai-security-actually-means.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
+
+<!-- Blog Post: Securing AI Tools Your Team Already Uses—Without Realizing the Risk -->
+<article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
+    <div style="padding: 25px;">
+        <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">AI Security</span>
+        <h3 style="color: white; margin: 10px 0; font-size: 1.3rem;">Securing AI Tools Your Team Already Uses—Without Realizing the Risk</h3>
+        <p style="color: #a0aec0; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">Address the rise of Shadow AI, data leakage risks, excessive API permissions, and how to establish sensible AI usage policies.</p>
+        <a href="posts/securing-ai-tools-team-uses.html" style="color: #0cbcb9; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+    </div>
+</article>
 
     </section>
 
@@ -91,26 +242,23 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="security-testing.html">Security Testing</a></li>
-                    <li><a href="compliance-governance.html">ISO Compliance & Audits</a></li>
-                    <li><a href="ai-security.html">AI Security Solutions</a></li>
+                    <li><a href="/security-testing.html">Security Testing</a></li>
+                    <li><a href="/compliance-governance.html">ISO Compliance & Audits</a></li>
+                    <li><a href="/ai-security.html">AI Security Solutions</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p><strong>Email:</strong> team@synactive.co</p>
                 <p><strong>Location:</strong> Islamabad, Pakistan</p>
-                <p><strong>Website:</strong> <a href="https://synactive.co">
-    synactive.co
-</a>
-                </p>
+                <p><strong>Website:</strong> <a href="https://synactive.co">synactive.co</a></p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Get Started</a></li>
+                    <li><a href="/index.html#services">Services</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Get Started</a></li>
                     <li><a href="https://www.linkedin.com/company/synactive-co/" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
