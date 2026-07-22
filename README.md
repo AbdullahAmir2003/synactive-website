@@ -1,1 +1,0 @@
-# synactive-website
