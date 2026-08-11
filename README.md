@@ -1,6 +1,6 @@
 # Synactive | Enterprise Cybersecurity & Compliance
 
-![Synactive Website](assets/synactive-logo.png)
+![Synactive Website](synactive-logo.png)
 
 > **Enterprise cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements.**
 
