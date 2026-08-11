@@ -41,7 +41,6 @@ This repository contains the source code for the official Synactive corporate we
 ```text
 ├── assets/
 │   ├── style.css
-│   └── synactive-logo.png
 ├── index.html
 ├── about.html
 ├── services.html
@@ -51,6 +50,7 @@ This repository contains the source code for the official Synactive corporate we
 ├── ai-security-consulting.html
 ├── contact.html
 └── README.md
+└── synactive-logo.png
 ```
 
 ---
