@@ -31,6 +31,7 @@ The four service line sections and all 16 service dropdowns appear together on t
 - `assets/style.css` — shared responsive design system and legacy page styling
 - `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and animated service disclosures
 - `assets/light-curtain.js` — interactive, reduced-motion-aware WebGL hero effect
+- `assets/data-pixel-arc.js` — interactive teal pixel arc for the homepage process section
 - `synactive-logo.png` — site logo
 
 ## React component setup
