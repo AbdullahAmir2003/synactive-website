@@ -28,6 +28,42 @@ document.querySelectorAll('.btn, .site-nav .nav-cta, .service-card .service-butt
     action.classList.add('fx-button');
 });
 
+document.querySelectorAll('.site-nav').forEach((navigation) => {
+    const moveLiquid = (item) => {
+        if (!item || !item.getClientRects().length) return;
+        const navBounds = navigation.getBoundingClientRect();
+        const itemBounds = item.getBoundingClientRect();
+        navigation.style.setProperty('--liquid-x', `${itemBounds.left - navBounds.left - navigation.clientLeft}px`);
+        navigation.style.setProperty('--liquid-y', `${itemBounds.top - navBounds.top - navigation.clientTop}px`);
+        navigation.style.setProperty('--liquid-width', `${itemBounds.width}px`);
+        navigation.style.setProperty('--liquid-height', `${itemBounds.height}px`);
+    };
+    const activeItem = () => navigation.querySelector(':scope > a[aria-current="page"]') || navigation.querySelector(':scope > a');
+    const resetLiquid = () => moveLiquid(navigation.querySelector(':scope > a:focus-visible') || activeItem());
+
+    navigation.addEventListener('pointerover', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const item = event.target.closest('a');
+        if (item?.parentElement === navigation) moveLiquid(item);
+    });
+    navigation.addEventListener('pointerleave', resetLiquid);
+    navigation.addEventListener('focusin', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const item = event.target.closest('a');
+        if (item?.parentElement === navigation) moveLiquid(item);
+    });
+    navigation.addEventListener('focusout', () => window.requestAnimationFrame(() => {
+        if (!navigation.contains(document.activeElement)) resetLiquid();
+    }));
+
+    if ('ResizeObserver' in window) {
+        new ResizeObserver(resetLiquid).observe(navigation);
+    } else {
+        window.addEventListener('resize', resetLiquid);
+    }
+    resetLiquid();
+});
+
 document.querySelectorAll('.menu-toggle').forEach((button) => {
     const navigation = document.getElementById(button.getAttribute('aria-controls'));
     if (!navigation) return;
