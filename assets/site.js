@@ -192,7 +192,31 @@ serviceLines.forEach((line) => {
     });
 });
 
-document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-line, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container').forEach((card) => {
+const siteTiles = document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-line, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container, .callout');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const beamObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.querySelector(':scope > .border-beam')?.classList.toggle('is-active', entry.isIntersecting);
+        });
+    })
+    : null;
+
+siteTiles.forEach((card) => {
+    card.classList.add('beam-tile');
+    let beam = card.querySelector(':scope > .border-beam');
+    if (!beam) {
+        beam = document.createElement('span');
+        beam.className = 'border-beam';
+        beam.setAttribute('aria-hidden', 'true');
+        card.append(beam);
+    }
+
+    if (!prefersReducedMotion) {
+        if (beamObserver) beamObserver.observe(card);
+        else beam.classList.add('is-active');
+    }
+
     card.addEventListener('pointermove', (event) => {
         const bounds = card.getBoundingClientRect();
         card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
