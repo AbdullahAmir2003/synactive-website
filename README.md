@@ -28,19 +28,46 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 - `about.html`, `contact.html`, and `blog.html` — company, contact, and insights
 - `posts/*.html` — published articles
 
-Existing service URLs such as `penetration-testing.html`, `iso-27001.html`, and `llm-security-assessment.html` remain available as compatibility pages that link to the current service details. The contact forms submit to the existing Formspree endpoint.
+Each of the 16 services has its own detail page. Existing URLs such as `penetration-testing.html`, `vulnerability-assessment.html`, and `llm-security-assessment.html` remain available as compatibility pages. The contact forms submit to the existing Formspree endpoint.
+
+Service detail routes:
+
+- Red Teaming: `security-awareness-training.html`, `external-recon-assessment.html`, `external-red-team-assessment.html`, `assumed-breach-assessment.html`, `internal-red-team-assessment.html`, `web-application-penetration-test.html`, `ai-red-team-assessment.html`
+- Governance, Risk and Compliance: `iso-27001.html`, `iso-27001-internal-audit.html`, `iso-27701.html`, `iso-27701-internal-audit.html`, `iso-42001.html`, `iso-42001-internal-audit.html`, `toolkit-development.html`
+- Blue Teaming: `soc-implementation.html`
+- Cybersecurity Consulting: `cybersecurity-consulting.html`
 
 ## Shared assets
 
 - `assets/style.css` — shared responsive design system and legacy page styling
-- `assets/site.js` — accessible mobile navigation and service-interest preselection
+- `assets/site.js` — accessible mobile navigation, service-interest preselection, and card spotlight effect
 - `synactive-logo.png` — site logo
 
-No build or automated test runner is currently configured. Before publishing, verify page routes and local links, preview the responsive layout, and test the Formspree submission flow.
+## React component setup
+
+This repository is currently plain HTML, CSS, and JavaScript. It does not have React, TypeScript, Tailwind CSS, or a shadcn build pipeline, so the supplied TSX `GlowCard` is saved at `components/ui/spotlight-card.tsx` but is not compiled by the website. The service cards use a lightweight native pointer spotlight instead. No image, icon, context provider, or state management dependency is required for the card.
+
+The current site uses `components/ui` for the supplied component and `assets/style.css` for shared styles. A Vite and shadcn project often uses `src/components/ui` and `src/index.css`; keep the CLI aliases and import paths aligned with whichever layout is selected.
+
+To create a Vite React and TypeScript workspace with shadcn support:
+
+```sh
+npm create vite@latest synactive-ui -- --template react-ts
+cd synactive-ui
+npm install
+npm install -D tailwindcss @tailwindcss/vite
+npx shadcn@latest init
+```
+
+In the shadcn setup, configure the component alias to match where the files live. The conventional `components/ui` folder keeps reusable primitives together and makes imports such as `@/components/ui/spotlight-card` predictable. If the project uses Vite's `src` directory alias, place the component at `src/components/ui/spotlight-card.tsx` or point the alias at the repository root. Add `tailwindcss()` from `@tailwindcss/vite` to the Vite plugins and `@import "tailwindcss";` to the app stylesheet before using the component's utility classes.
+
+The card accepts children, class name, glow color, size, width, height, and a custom size option. It has no provider or external asset requirements. For the service catalog, use custom sizing so cards follow the responsive grid width.
+
+No build or automated test runner is currently configured for the existing static site. Before publishing, verify page routes and local links, preview the responsive layout, and test the Formspree submission flow.
 
 ## Contact
 
 - Email: [team@synactive.co](mailto:team@synactive.co)
-- Location: Islamabad, Pakistan
+- Location: Remote
 - Website: [synactive.co](https://synactive.co)
 - [Synactive on LinkedIn](https://www.linkedin.com/company/synactive-co/)

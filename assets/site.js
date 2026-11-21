@@ -24,6 +24,14 @@ document.querySelectorAll('.menu-toggle').forEach((button) => {
     });
 });
 
+document.querySelectorAll('.line-card, .service-card-link, .service-detail').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+        card.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+    });
+});
+
 const serviceInterest = document.getElementById('service-interest');
 const requestedService = new URLSearchParams(window.location.search).get('service');
 if (serviceInterest && requestedService) {
