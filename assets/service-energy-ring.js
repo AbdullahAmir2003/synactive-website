@@ -196,8 +196,8 @@
         const delta = Math.min(0.05, Math.max(0, (now - lastFrame) / 1000));
         lastFrame = now;
         energy += (targetEnergy - energy) * (1 - Math.exp(-delta * 2.5));
-        time += delta * (0.85 + energy * 0.7);
-        particleTime += delta * (0.65 + energy * 0.3);
+        time += delta * (1.7 + energy * 1.4);
+        particleTime += delta * (1.3 + energy * 0.6);
         draw();
         frameId = window.requestAnimationFrame(render);
     };
