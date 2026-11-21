@@ -151,6 +151,19 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 }
 
 .site-main { min-height: 60vh; }
+.site-ending {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--ink);
+}
+.site-ending > .site-main,
+.site-ending > footer { position: relative; z-index: 1; }
+.site-ending > footer {
+    background: transparent;
+    border-top: 0;
+}
+.site-ending .explore-section { background: transparent; }
 .container { width: min(calc(100% - 2.5rem), var(--content-width)); margin-inline: auto; }
 .narrow-container { width: min(calc(100% - 2.5rem), 840px); margin-inline: auto; }
 .section { padding: clamp(4rem, 8vw, 7rem) 0; }
@@ -167,10 +180,12 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .section--paper .section-heading h2 { color: var(--white); }
 .section-heading p { max-width: 660px; margin: 0; color: var(--muted); font-size: 1.05rem; }
 .section--paper .section-heading p { color: var(--muted); }
+#services.section { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section.explore-section {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    padding-top: clamp(2.5rem, 5vw, 4rem);
     padding-bottom: clamp(7rem, 12vw, 10rem);
 }
 .explore-section > .container { position: relative; z-index: 1; }
@@ -178,13 +193,20 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     position: absolute;
     inset: auto 0 0;
     z-index: 0;
-    height: clamp(20rem, 45vh, 34rem);
+    height: clamp(50rem, 110vh, 72rem);
     overflow: hidden;
     pointer-events: none;
     background: radial-gradient(ellipse at 50% 100%, rgba(27, 154, 134, .12), transparent 68%);
 }
 .light-bloom canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .65s ease; }
 .light-bloom.is-active canvas { opacity: 1; }
+.light-bloom::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .12), rgba(0, 0, 0, .42));
+    content: '';
+    pointer-events: none;
+}
 .explore-section .section-heading { margin-bottom: 0; }
 .explore-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.5rem; }
 .eyebrow {

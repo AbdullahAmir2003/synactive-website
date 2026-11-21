@@ -31,7 +31,7 @@ The four service line sections and all 16 service dropdowns appear together on t
 - `assets/style.css` — shared responsive design system and legacy page styling
 - `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and nested service-line disclosures
 - `assets/light-curtain.js` — interactive, reduced-motion-aware WebGL hero effect
-- `assets/light-bloom.js` — responsive WebGL Light Bloom footer effect in Synactive teal
+- `assets/light-bloom.js` — responsive WebGL Light Bloom across the homepage closing section and footer
 - `assets/service-energy-ring.js` — responsive, reduced-motion-aware Canvas 2D service-line animation
 - `synactive-logo.png` — site logo
 

@@ -1,8 +1,10 @@
 (() => {
     const root = document.querySelector('[data-light-bloom]');
-    const section = root?.closest('.explore-section');
+    const stage = root?.closest('.site-ending');
     const canvas = root?.querySelector('canvas');
-    if (!root || !section || !canvas) return;
+    const explore = stage?.querySelector('.explore-section');
+    const footer = stage?.querySelector('footer');
+    if (!root || !stage || !canvas || !explore || !footer) return;
 
     const gl = canvas.getContext('webgl', {
         alpha: false,
@@ -153,6 +155,7 @@
     let isVisible = true;
 
     const resize = () => {
+        root.style.height = `${explore.offsetHeight + footer.offsetHeight}px`;
         const bounds = root.getBoundingClientRect();
         const ratio = Math.min(window.devicePixelRatio || 1, 2);
         const width = Math.max(1, Math.round(bounds.width * ratio));
@@ -177,8 +180,8 @@
         gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
         gl.uniform1f(uniforms.time, clock);
         gl.uniform3f(uniforms.background, 0, 0, 0);
-        gl.uniform3f(uniforms.base, 8 / 255, 92 / 255, 82 / 255);
-        gl.uniform3f(uniforms.accent, 82 / 255, 216 / 255, 191 / 255);
+        gl.uniform3f(uniforms.base, 5 / 255, 60 / 255, 53 / 255);
+        gl.uniform3f(uniforms.accent, 44 / 255, 153 / 255, 135 / 255);
         gl.uniform1f(uniforms.rise, 0.79);
         gl.uniform1f(uniforms.spread, 0.72);
         gl.uniform1f(uniforms.originX, 0.5 + (pointer.x - 0.5) * 0.8 * pointer.active);
@@ -204,17 +207,17 @@
         window.cancelAnimationFrame(frameId);
     };
     const updatePointer = (event) => {
-        const bounds = section.getBoundingClientRect();
+        const bounds = stage.getBoundingClientRect();
         if (!bounds.width) return;
         pointer.targetX = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
     };
 
-    section.addEventListener('pointerenter', (event) => {
+    stage.addEventListener('pointerenter', (event) => {
         pointer.targetActive = 1;
         updatePointer(event);
     });
-    section.addEventListener('pointermove', updatePointer);
-    section.addEventListener('pointerleave', () => { pointer.targetActive = 0; });
+    stage.addEventListener('pointermove', updatePointer);
+    stage.addEventListener('pointerleave', () => { pointer.targetActive = 0; });
     canvas.addEventListener('webglcontextlost', (event) => {
         event.preventDefault();
         stop();
@@ -229,7 +232,8 @@
     let resizeObserver;
     if ('ResizeObserver' in window) {
         resizeObserver = new ResizeObserver(resize);
-        resizeObserver.observe(root);
+        resizeObserver.observe(explore);
+        resizeObserver.observe(footer);
     } else {
         window.addEventListener('resize', resize);
     }
@@ -241,7 +245,7 @@
             if (isVisible) start();
             else stop();
         });
-        intersectionObserver.observe(section);
+        intersectionObserver.observe(root);
     } else {
         start();
     }
