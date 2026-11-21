@@ -392,7 +392,12 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .fx-button:hover > .btn-icon,
 .fx-button:focus-visible > .btn-icon { transform: translateX(-.1rem); }
 .fx-button:focus-visible { outline: 3px solid rgba(82,216,191,.7); outline-offset: 3px; }
-.site-nav .nav-cta.fx-button { min-height: 44px; padding: .25rem .4rem .25rem .9rem; }
+.site-nav .nav-cta.fx-button {
+    min-height: 44px;
+    padding: .25rem .4rem .25rem .9rem;
+    border: 1px solid var(--accent);
+}
+.site-nav .nav-cta.fx-button:hover { color: var(--ink); background: #86ead7; border-color: #86ead7; transform: translateY(-2px); }
 .site-nav .nav-cta.fx-button > .btn-icon,
 .site-nav .nav-cta.fx-button > .circle-overlay { width: 1.9rem; height: 1.9rem; }
 .site-nav .nav-cta.fx-button > .btn-icon { flex-basis: 1.9rem; }
