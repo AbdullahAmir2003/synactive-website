@@ -713,7 +713,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .week-pill {
     display: flex;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
     gap: .7rem;
     min-width: 0;
     padding: .8rem 1rem;
