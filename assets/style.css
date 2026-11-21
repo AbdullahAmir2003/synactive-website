@@ -875,11 +875,14 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     align-items: center;
     justify-content: center;
     min-height: 30px;
-    padding: .2rem .65rem;
-    color: var(--ink);
-    background: var(--accent);
+    padding: .38rem .7rem;
+    color: var(--accent);
+    background: var(--accent-wash);
+    border: 1px solid rgba(82,216,191,.2);
     border-radius: 999px;
-    font-size: .73rem;
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1;
     white-space: nowrap;
 }
 .week-pill span { flex: 1 1 auto; min-width: 0; color: var(--text); font-size: 1rem; font-weight: 500; line-height: 1.55; }
