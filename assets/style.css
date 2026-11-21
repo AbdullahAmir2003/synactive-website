@@ -417,8 +417,20 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 }
 .service-line + .service-line { margin-top: 1.1rem; }
 .service-line > * { position: relative; z-index: 1; }
-.service-line.is-reveal-pending { opacity: 0; transform: translateY(1.4rem) scale(.99); transition: opacity .72s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
-.service-line.is-reveal-pending.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(.99);
+    transition: opacity .65s ease var(--reveal-delay, 0ms), transform .8s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms);
+}
+.scroll-reveal > :not(.service-detail-content) {
+    opacity: 0;
+    transform: translateY(.7rem);
+    transition:
+        opacity .55s ease calc(var(--reveal-delay, 0ms) + var(--reveal-child-delay, 0ms)),
+        transform .65s cubic-bezier(.2,.8,.2,1) calc(var(--reveal-delay, 0ms) + var(--reveal-child-delay, 0ms));
+}
+.scroll-reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.is-visible > :not(.service-detail-content) { opacity: 1; transform: translateY(0) scale(1); }
 .service-line-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.2rem; margin-bottom: 1.2rem; }
 .service-line-heading h2 { margin: 0; color: var(--white); font: 700 clamp(1.8rem, 3.6vw, 2.7rem)/1.15 var(--font-display); letter-spacing: -.04em; }
 .service-line-heading p { max-width: 520px; margin: 0; color: var(--muted); }

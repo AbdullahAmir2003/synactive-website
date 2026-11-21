@@ -191,19 +191,27 @@ document.querySelectorAll('.service-detail-collapsible').forEach((card) => {
     });
 });
 
-const serviceLines = document.querySelectorAll('.service-line');
-if (serviceLines.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const serviceLineObserver = new IntersectionObserver((entries, observer) => {
+const revealTargets = document.querySelectorAll('.hero-inner > *, .page-hero-inner > *, .section-heading, .service-line-heading, .service-detail, .service-card-new, .cta-panel');
+if (revealTargets.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealOrder = new Map();
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) return;
             entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
         });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.14, rootMargin: '0px 0px -5% 0px' });
 
-    serviceLines.forEach((section) => {
-        section.classList.add('is-reveal-pending');
-        serviceLineObserver.observe(section);
+    revealTargets.forEach((target) => {
+        const group = target.closest('.service-line, .section') || target.parentElement;
+        const order = revealOrder.get(group) || 0;
+        revealOrder.set(group, order + 1);
+        target.style.setProperty('--reveal-delay', `${Math.min(order * 75, 525)}ms`);
+        Array.from(target.children).forEach((child, index) => {
+            child.style.setProperty('--reveal-child-delay', `${index * 65}ms`);
+        });
+        target.classList.add('scroll-reveal');
+        revealObserver.observe(target);
     });
 }
 
