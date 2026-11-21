@@ -36,7 +36,7 @@
 
     const createParticles = () => {
         const random = makeRandom(1337);
-        const count = Math.min(1400, Math.max(520, Math.round((width * height) / 190)));
+        const count = Math.min(2800, Math.max(1000, Math.round((width * height) / 95)));
         particles = Array.from({ length: count }, () => {
             let x;
             let y;
@@ -72,6 +72,7 @@
                 speed: 0.3 + random() * 0.8,
                 rise: 0.08 + random() * 0.16,
                 drift: random() * Math.PI * 2,
+                sparkle: tone === 3 ? random() < 0.32 : random() < 0.035,
             };
         });
     };
@@ -96,7 +97,8 @@
             const angle = (index / segments) * Math.PI * 2;
             const wave = Math.sin(angle * 7 - time * 1.3 + phase) * 0.56
                 + Math.sin(angle * 19 + time * 0.8 + phase * 1.7) * 0.28
-                + Math.sin(angle * 37 - time * 0.6 + phase * 0.5) * 0.16;
+                + Math.sin(angle * 37 - time * 0.6 + phase * 0.5) * 0.12
+                + Math.sin(angle * 61 + time * 0.95 + phase * 2.1) * 0.04;
             const r = radius + wave * amplitude;
             const x = cx + Math.cos(angle) * r;
             const y = cy + Math.sin(angle) * r;
@@ -110,7 +112,7 @@
         if (width < 2 || height < 2) return;
         const cx = width / 2;
         const cy = height / 2;
-        const radius = Math.min(width, height) * 0.36;
+        const radius = Math.min(width, height) * 0.37;
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
         context.clearRect(0, 0, width, height);
 
@@ -139,27 +141,46 @@
             context.globalAlpha = alpha;
             context.fillRect(cx + x * radius - size / 2, cy + y * radius - size / 2, size, size);
         });
+        particles.forEach((particle) => {
+            if (!particle.sparkle) return;
+            const phase = (particle.phase + particleTime * particle.speed * 0.12) % 1;
+            const lift = Math.sin(phase * Math.PI) * particle.rise;
+            const x = particle.x + Math.sin(particleTime * particle.speed + particle.drift) * 0.008;
+            const y = particle.y - lift;
+            const twinkle = Math.pow(Math.max(0, Math.sin(particleTime * (5 + particle.speed * 8) + particle.drift)), 16);
+            if (twinkle < 0.82 || x * x + y * y > 0.96) return;
+            const sparkleSize = particle.size * (2 + twinkle * 2.5);
+            context.globalAlpha = 0.35 + twinkle * 0.65;
+            context.strokeStyle = '#d5fff5';
+            context.lineWidth = Math.max(0.7, particle.size * 0.3);
+            context.beginPath();
+            context.moveTo(cx + x * radius - sparkleSize, cy + y * radius);
+            context.lineTo(cx + x * radius + sparkleSize, cy + y * radius);
+            context.moveTo(cx + x * radius, cy + y * radius - sparkleSize);
+            context.lineTo(cx + x * radius, cy + y * radius + sparkleSize);
+            context.stroke();
+        });
         context.restore();
 
         context.save();
         context.globalCompositeOperation = 'lighter';
         context.lineCap = 'round';
         context.lineJoin = 'round';
-        drawRingPath(cx, cy, radius, radius * (0.012 + energy * 0.008), 0);
+        drawRingPath(cx, cy, radius, radius * (0.02 + energy * 0.014), 0);
         context.strokeStyle = 'rgba(7, 142, 130, .34)';
         context.lineWidth = radius * 0.12;
         context.shadowColor = '#20b49f';
         context.shadowBlur = radius * (0.22 + energy * 0.12);
         context.stroke();
 
-        drawRingPath(cx, cy, radius, radius * 0.012, 1.2);
+        drawRingPath(cx, cy, radius, radius * 0.018, 1.2);
         context.strokeStyle = 'rgba(32, 180, 159, .42)';
         context.lineWidth = radius * 0.045;
         context.shadowBlur = radius * 0.08;
         context.stroke();
 
         for (let strand = 0; strand < 4; strand += 1) {
-            drawRingPath(cx, cy, radius + (strand - 1.5) * radius * 0.006, radius * (0.004 + strand * 0.001), strand * 1.8);
+            drawRingPath(cx, cy, radius + (strand - 1.5) * radius * 0.006, radius * (0.006 + strand * 0.0015), strand * 1.8);
             context.globalAlpha = 0.28 + strand * 0.12;
             context.strokeStyle = strand === 3 ? '#a7f5e5' : '#52d8bf';
             context.lineWidth = Math.max(1, radius * (strand === 3 ? 0.004 : 0.006));
@@ -176,13 +197,13 @@
         context.stroke();
 
         for (let arc = 0; arc < 3; arc += 1) {
-            const start = -Math.PI / 2 + time * (0.16 + arc * 0.025) + arc * 2.1;
+            const start = -Math.PI / 2 + time * (0.6 + arc * 0.1) + arc * 2.1;
             context.globalAlpha = 0.28 + energy * 0.32;
             context.strokeStyle = arc === 1 ? '#a7f5e5' : '#52d8bf';
             context.lineWidth = Math.max(1.5, radius * 0.009);
             context.shadowBlur = radius * 0.09;
             context.beginPath();
-            context.arc(cx, cy, radius * (1.01 + arc * 0.004), start, start + 0.16 + energy * 0.12);
+            context.arc(cx, cy, radius * (1.01 + arc * 0.004), start, start + 0.12 + energy * 0.1);
             context.stroke();
         }
         context.restore();

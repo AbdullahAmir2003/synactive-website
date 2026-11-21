@@ -304,7 +304,7 @@ document.querySelectorAll('.service-detail-collapsible').forEach((card) => {
     });
 });
 
-const revealTargets = document.querySelectorAll('.hero-inner > *, .page-hero-inner > *, .section-heading, .service-line-heading, .service-detail, .service-card-new, .cta-panel');
+const revealTargets = document.querySelectorAll('.hero-inner > *, .page-hero-inner > *, .section-heading, .service-line-heading, .service-detail, .service-card-new, .explore-item, .cta-panel');
 if (revealTargets.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const revealOrder = new Map();
     const revealObserver = new IntersectionObserver((entries, observer) => {
