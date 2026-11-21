@@ -193,6 +193,7 @@ serviceLines.forEach((line) => {
 });
 
 const siteTiles = document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-line, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container, .callout');
+const beamTiles = document.querySelectorAll('#services .service-line');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const beamObserver = 'IntersectionObserver' in window
     ? new IntersectionObserver((entries) => {
@@ -203,6 +204,15 @@ const beamObserver = 'IntersectionObserver' in window
     : null;
 
 siteTiles.forEach((card) => {
+    card.classList.add('site-tile');
+    card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+        card.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+    });
+});
+
+beamTiles.forEach((card) => {
     card.classList.add('beam-tile');
     let beam = card.querySelector(':scope > .border-beam');
     if (!beam) {
@@ -216,12 +226,6 @@ siteTiles.forEach((card) => {
         if (beamObserver) beamObserver.observe(card);
         else beam.classList.add('is-active');
     }
-
-    card.addEventListener('pointermove', (event) => {
-        const bounds = card.getBoundingClientRect();
-        card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
-        card.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
-    });
 });
 
 const prepareServiceContent = (content) => {

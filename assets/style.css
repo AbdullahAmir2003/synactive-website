@@ -1186,7 +1186,7 @@ main[style*="max-width: 800px"] > div[style*="background: #0a1527"] p { color: v
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-.beam-tile {
+.site-tile {
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -1196,9 +1196,9 @@ main[style*="max-width: 800px"] > div[style*="background: #0a1527"] p { color: v
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
 }
-.beam-tile:hover,
-.beam-tile:focus-within,
-.beam-tile[open] {
+.site-tile:hover,
+.site-tile:focus-within,
+.site-tile[open] {
     border-color: rgba(82, 216, 191, .58);
     box-shadow: 0 0 28px rgba(82, 216, 191, .08);
 }
