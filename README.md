@@ -19,28 +19,16 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 
 ## Main routes
 
-- `index.html` — homepage
-- `services.html` — complete service directory
-- `security-testing.html` — Red Teaming service line
-- `compliance-governance.html` — Governance, Risk and Compliance service line
-- `blue-teaming.html` — Blue Teaming service line
-- `cybersecurity-consulting.html` — Cybersecurity Consulting service line
+- `index.html` — homepage and the single expandable service catalog
 - `about.html`, `contact.html`, and `blog.html` — company, contact, and insights
 - `posts/*.html` — published articles
 
-Each of the 16 services has its own detail page. Existing URLs such as `penetration-testing.html`, `vulnerability-assessment.html`, and `llm-security-assessment.html` remain available as compatibility pages. The contact forms submit to the existing Formspree endpoint.
-
-Service detail routes:
-
-- Red Teaming: `security-awareness-training.html`, `external-recon-assessment.html`, `external-red-team-assessment.html`, `assumed-breach-assessment.html`, `internal-red-team-assessment.html`, `web-application-penetration-test.html`, `ai-red-team-assessment.html`
-- Governance, Risk and Compliance: `iso-27001.html`, `iso-27001-internal-audit.html`, `iso-27701.html`, `iso-27701-internal-audit.html`, `iso-42001.html`, `iso-42001-internal-audit.html`, `toolkit-development.html`
-- Blue Teaming: `soc-implementation.html`
-- Cybersecurity Consulting: `cybersecurity-consulting.html`
+The 16 services are grouped into four expandable sections on the homepage. Former service directory, service-line, and standalone service URLs redirect to their matching homepage section or service card to avoid duplicate content while preserving existing links. The contact forms submit to the existing Formspree endpoint.
 
 ## Shared assets
 
 - `assets/style.css` — shared responsive design system and legacy page styling
-- `assets/site.js` — accessible mobile navigation, service-interest preselection, and card spotlight effect
+- `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and animated service disclosures
 - `synactive-logo.png` — site logo
 
 ## React component setup
