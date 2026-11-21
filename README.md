@@ -24,12 +24,13 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 - `process.html` — the four stage engagement process
 - `about.html` and `contact.html` — company and contact information
 
-The four service line sections and all 16 service dropdowns appear together on the homepage. Each line spans the page with a distinct static background, without an outer card. Legacy standalone service URLs redirect to their matching service cards on `index.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
+The four service line sections and all 16 service dropdowns appear together on the homepage. Each line spans the page on the shared black background, without an outer card. The homepage hero uses a WebGL light curtain in Synactive teal, with a CSS fallback when WebGL is unavailable and no WebGL motion when reduced motion is requested. Legacy standalone service URLs redirect to their matching service cards on `index.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
 
 ## Shared assets
 
 - `assets/style.css` — shared responsive design system and legacy page styling
 - `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and animated service disclosures
+- `assets/light-curtain.js` — interactive, reduced-motion-aware WebGL hero effect
 - `synactive-logo.png` — site logo
 
 ## React component setup
