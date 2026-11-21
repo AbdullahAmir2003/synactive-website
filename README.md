@@ -24,7 +24,7 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 - `process.html` — the four stage engagement process
 - `about.html` and `contact.html` — company and contact information
 
-The four service line sections and all 16 service dropdowns appear together on the homepage. Each line spans the page with its own animated background, without an outer card. Legacy standalone service URLs redirect to their matching service cards on `index.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
+The four service line sections and all 16 service dropdowns appear together on the homepage. Each line spans the page with a distinct static background, without an outer card. Legacy standalone service URLs redirect to their matching service cards on `index.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
 
 ## Shared assets
 

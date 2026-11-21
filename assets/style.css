@@ -389,78 +389,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .service-line--grc { background: linear-gradient(125deg, #1a2c28, #10232b 62%, #29251b); }
 .service-line--blue { background: linear-gradient(125deg, #102b38, #0d2029 62%, #102b38); }
 .service-line--consulting { background: linear-gradient(125deg, #211d35, #101e28 62%, #172938); }
-.service-line > :not(.service-line-scene) { position: relative; z-index: 1; }
-.service-line-scene {
-    --scene-glow: rgba(82,216,191,.13);
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-    background: radial-gradient(ellipse at 82% 12%, var(--scene-glow), transparent 44%);
-    opacity: .8;
-}
-.service-line-scene::before,
-.service-line-scene::after {
-    position: absolute;
-    inset: -18%;
-    content: '';
-    pointer-events: none;
-}
-.service-line-scene::before {
-    background-size: 100% 100%;
-    opacity: .72;
-    animation: service-scene-drift 26s ease-in-out infinite alternate;
-}
-.service-line-scene::after {
-    inset: -20% auto -20% -35%;
-    width: 35%;
-    background: linear-gradient(110deg, transparent, var(--scene-glow), transparent);
-    filter: blur(28px);
-    opacity: .65;
-    animation: service-scene-sweep 15s ease-in-out infinite;
-}
-.service-line-scene--red { --scene-glow: rgba(242,75,94,.22); }
-.service-line-scene--red::before {
-    background:
-        repeating-radial-gradient(circle at 82% 18%, transparent 0 36px, rgba(251,91,109,.18) 37px 38px, transparent 39px 72px),
-        linear-gradient(130deg, transparent 36%, rgba(248,71,91,.09) 36.2%, transparent 36.5% 55%, rgba(248,71,91,.08) 55.2%, transparent 55.5%);
-}
-.service-line-scene--grc { --scene-glow: rgba(196,166,86,.15); }
-.service-line-scene--grc::before {
-    background:
-        linear-gradient(rgba(132,185,158,.095) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(132,185,158,.095) 1px, transparent 1px),
-        radial-gradient(ellipse at 78% 24%, rgba(196,166,86,.12), transparent 44%);
-    background-size: 40px 40px, 40px 40px, 100% 100%;
-}
-.service-line-scene--blue { --scene-glow: rgba(66,185,231,.18); }
-.service-line-scene--blue::before {
-    background:
-        repeating-linear-gradient(90deg, transparent 0 27px, rgba(75,197,238,.12) 28px 29px, transparent 30px 54px),
-        repeating-linear-gradient(0deg, transparent 0 34px, rgba(75,197,238,.08) 35px 36px, transparent 37px 68px),
-        radial-gradient(ellipse at 78% 48%, rgba(44,160,211,.13), transparent 42%);
-    mask-image: radial-gradient(ellipse at 78% 48%, #000 12%, transparent 76%);
-}
-.service-line-scene--consulting { --scene-glow: rgba(146,111,226,.17); }
-.service-line-scene--consulting::before {
-    background:
-        radial-gradient(circle, rgba(178,157,246,.23) 1px, transparent 2px),
-        linear-gradient(35deg, transparent 47%, rgba(160,133,236,.15) 47.2%, transparent 47.5% 65%, rgba(79,192,185,.12) 65.2%, transparent 65.5%),
-        radial-gradient(ellipse at 82% 22%, rgba(118,94,205,.14), transparent 46%);
-    background-size: 24px 24px, 100% 100%, 100% 100%;
-}
+.service-line > * { position: relative; z-index: 1; }
 .service-line.is-reveal-pending { opacity: 0; transform: translateY(1.4rem) scale(.99); transition: opacity .72s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
 .service-line.is-reveal-pending.is-visible { opacity: 1; transform: translateY(0) scale(1); }
-@keyframes service-scene-drift {
-    from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
-    to { transform: translate3d(1.5%, 1%, 0) scale(1.04); }
-}
-@keyframes service-scene-sweep {
-    0%, 12% { transform: translateX(0); opacity: 0; }
-    28% { opacity: .7; }
-    78%, 100% { transform: translateX(460%); opacity: 0; }
-}
 .service-line-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.2rem; margin-bottom: 1.2rem; }
 .service-line-heading h2 { margin: 0; color: var(--white); font: 700 clamp(1.8rem, 3.6vw, 2.7rem)/1.15 var(--font-display); letter-spacing: -.04em; }
 .service-line-heading p { max-width: 520px; margin: 0; color: var(--muted); }
