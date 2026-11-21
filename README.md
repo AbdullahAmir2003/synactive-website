@@ -19,12 +19,12 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 
 ## Main routes
 
-- `index.html` — homepage and entry points to the site
-- `services.html` — all 16 expandable services across four service lines
+- `index.html` — homepage and full expandable service catalog
+- `services.html` — legacy route to the homepage service catalog
 - `process.html` — the four stage engagement process
 - `about.html` and `contact.html` — company and contact information
 
-The four service line sections are presented together on the Services page without an outer card around each line. Legacy standalone service URLs redirect to their matching service cards on `services.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
+The four service line sections and all 16 service dropdowns appear together on the homepage. Each line spans the page with its own animated background, without an outer card. Legacy standalone service URLs redirect to their matching service cards on `index.html`, while blog and article URLs redirect to the homepage. The contact forms submit to the existing Formspree endpoint.
 
 ## Shared assets
 
