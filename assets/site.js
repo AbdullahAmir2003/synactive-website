@@ -24,7 +24,7 @@ document.querySelectorAll('.menu-toggle').forEach((button) => {
     });
 });
 
-document.querySelectorAll('.line-card, .service-card-link, .service-detail').forEach((card) => {
+document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container').forEach((card) => {
     card.addEventListener('pointermove', (event) => {
         const bounds = card.getBoundingClientRect();
         card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
