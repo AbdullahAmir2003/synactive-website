@@ -67,7 +67,6 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     min-height: var(--header-height);
     padding: 0 clamp(1rem, 4vw, 3.25rem);
     background: rgba(0, 0, 0, .92);
-    border-bottom: 1px solid var(--line);
     backdrop-filter: blur(18px);
     transition: transform .28s ease;
 }
@@ -175,18 +174,17 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     padding-bottom: clamp(7rem, 12vw, 10rem);
 }
 .explore-section > .container { position: relative; z-index: 1; }
-.data-pixel-arc {
+.light-bloom {
     position: absolute;
     inset: auto 0 0;
     z-index: 0;
-    height: clamp(18rem, 42vh, 32rem);
+    height: clamp(20rem, 45vh, 34rem);
     overflow: hidden;
     pointer-events: none;
-    background: radial-gradient(ellipse at 50% 80%, rgba(27, 154, 134, .17), transparent 62%);
-    opacity: .48;
+    background: radial-gradient(ellipse at 50% 100%, rgba(27, 154, 134, .12), transparent 68%);
 }
-.data-pixel-arc canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .65s ease; }
-.data-pixel-arc.is-active canvas { opacity: 1; }
+.light-bloom canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .65s ease; }
+.light-bloom.is-active canvas { opacity: 1; }
 .explore-section .section-heading { margin-bottom: 0; }
 .explore-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.5rem; }
 .eyebrow {
@@ -777,7 +775,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
     .service-detail-content.service-detail-animated { transition: none; }
     .service-word { opacity: 1; filter: none; transform: none; transition: none; }
-    .data-pixel-arc canvas { transition: none; }
+    .light-bloom canvas { transition: none; }
 }
 .service-detail-head { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 1rem; }
 .service-detail h3 { margin: 0 0 .5rem; color: var(--white); font: 700 clamp(1.1rem, 2.2vw, 1.35rem)/1.3 var(--font-display); }
