@@ -1,105 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security Testing | Synactive</title>
-<link rel="stylesheet" href="assets/style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Synactive's Red Teaming services: security awareness, external recon, red team assessments, web application testing, and AI red teaming.">
+  <meta name="theme-color" content="#07151d">
+  <title>Red Teaming | Synactive</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="main-header"><div class="header-content">
+    <a href="index.html" class="brand-logo" aria-label="Synactive home"><img src="synactive-logo.png" alt="Synactive" class="logo-icon"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation"><a href="index.html">Home</a><details class="nav-dropdown"><summary>Services</summary><div class="dropdown-content"><a href="services.html">All services</a><a href="security-testing.html">Red Teaming</a><a href="compliance-governance.html">Governance, Risk &amp; Compliance</a><a href="blue-teaming.html">Blue Teaming</a><a href="cybersecurity-consulting.html">Cybersecurity Consulting</a></div></details><a href="about.html">About</a><a href="blog.html">Insights</a><a href="contact.html" class="nav-cta">Talk to our team</a></nav>
+  </div></header>
+  <p class="breadcrumb"><a href="services.html">Services</a> / Red Teaming</p>
+  <main id="main" class="site-main">
+    <section class="hero"><div class="hero-inner">
+      <span class="eyebrow">Red Teaming / 7 services</span>
+      <h1>Understand what an attacker could <em>actually reach.</em></h1>
+      <p class="subhead">Authorized, scoped testing across your public footprint, workforce, applications, AI systems, and internal environment—followed by clear findings and recommendations.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="contact.html?service=External%20Red%20Team%20Assessment#contact-form">Discuss a Red Team engagement →</a><a class="btn btn-ghost" href="services.html">View all services</a></div>
+    </div></section>
+    <section class="section"><div class="container">
+      <div class="section-heading"><span class="eyebrow">Assessments and training</span><h2>Seven ways to examine exposure.</h2><p>Every engagement is scoped with your organization. The timelines below are indicative ranges from the service definition and may depend on project scope.</p></div>
 
-    <!-- HEADER -->
-<header class="main-header">
-  <!-- Brand Logo Only -->
-  <a href="index.html" class="brand-logo">
-    <img src="synactive-logo.png" alt="Synactive" class="logo-icon">
-  </a>
+      <article class="service-detail" id="security-awareness">
+        <div class="service-detail-head"><div><h3>Security Awareness and Training</h3><p class="service-summary">Build practical employee awareness with organization-specific training, supporting materials, and an authorized phishing campaign to evaluate understanding.</p></div><span class="service-duration">1 month</span></div>
+        <div class="service-facts"><div><h4>Deliverables</h4><ul><li>Training slides and PDF guidebook</li><li>Phishing campaign report with interaction statistics and recommendations</li><li>Project plan before execution</li></ul></div><div><h4>Engagement outline</h4><p>Week 1: understand business requirements and risks. Week 2: deliver training and a short knowledge check. Week 3: design and run the agreed phishing campaign. Week 4: present results and recommendations.</p></div></div>
+        <p class="note">The organization covers the cost of the campaign domain. Any user-level interaction reporting is discussed during scoping.</p>
+      </article>
 
-  <!-- Navigation & CTA -->
-  <div class="header-right">
-    <nav>
-      <a href="index.html">Home</a>
+      <article class="service-detail" id="external-recon">
+        <div class="service-detail-head"><div><h3>External Recon Assessment</h3><p class="service-summary">Map publicly accessible services and identify opportunities to reduce your digital footprint and external attack surface.</p></div><span class="service-duration">1 month</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>External Recon Assessment Report with identified exposures, business impact, and recommendations; project plan shared before execution.</p></div><div><h4>Assessment boundary</h4><p>Includes passive and active reconnaissance of agreed assets. This assessment does not include exploitation.</p></div></div>
+        <div class="timeline"><div class="timeline-step"><strong>Week 1</strong><p>Kickoff, business context, and information request.</p></div><div class="timeline-step"><strong>Week 2</strong><p>Passive review of public footprint and available exposure information.</p></div><div class="timeline-step"><strong>Week 3</strong><p>Active reconnaissance against agreed public-facing assets.</p></div><div class="timeline-step"><strong>Week 4</strong><p>Report findings and explain recommendations.</p></div></div>
+      </article>
 
-      <div class="dropdown">
-        <a href="services.html">Services</a>
-        <div class="dropdown-content">
-          <a href="security-testing.html">Security Testing</a>
-          <a href="compliance-governance.html">Compliance & Governance</a>
-          <a href="ai-security.html">AI Security</a>
-        </div>
-      </div>
+      <article class="service-detail" id="external-red-team">
+        <div class="service-detail-head"><div><h3>External Red Team Assessment</h3><p class="service-summary">A black-box assessment that simulates an external attacker and demonstrates potential business impact from the organization's internet-facing assets.</p></div><span class="service-duration">1–3 months</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>External Red Team Assessment Report documenting findings, evidence, business impact, and recommendations. A project plan is shared before execution.</p></div><div><h4>Engagement outline</h4><p>Begin with a kickoff and information request. Testing scope and duration depend on the organization's agreed assets and requirements; reporting follows project closure.</p></div></div>
+      </article>
 
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+      <article class="service-detail" id="assumed-breach">
+        <div class="service-detail-head"><div><h3>Assumed Breach Assessment</h3><p class="service-summary">A grey-box assessment that starts from an agreed low-privilege position and examines how an attacker could escalate and expand their reach inside the environment.</p></div><span class="service-duration">1–3 months</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>Assumed Breach Assessment Report with findings, supporting evidence, business impact, and recommendations; project plan shared before execution.</p></div><div><h4>Engagement outline</h4><p>Kickoff and information request establish the rules and starting conditions. Scope determines duration; the report is shared at project closure.</p></div></div>
+      </article>
 
-<p class="breadcrumb"><a href="index.html#services">Services</a> &nbsp;/&nbsp; Security Testing</p>
-    <section class="hero">
-        <div class="hero-inner">
-            <span class="eyebrow">PILLAR 01 — SECURITY TESTING<span class="cursor"></span></span>
-            <h1>Find the Vulnerabilities Before Attackers Do</h1>
-            <p class="subhead">Hands-on security testing that shows you exactly where your systems, applications, and infrastructure are exposed. Not just a scan report, but a real assessment of what an attacker could actually do.</p>
-            <div class="hero-ctas"><a href="penetration-testing.html#request" class="btn btn-primary">Get a Security Assessment Quote</a></div>
-        </div>
-    </section>
-<section><p class="body-copy">Automated tools catch the obvious. Real attackers don't stop there, and neither do we. Our Security Testing services combine manual penetration testing with structured vulnerability assessments to give you an accurate picture of your actual risk, prioritized by what matters, not a 200-page list of noise.</p><div class="card-grid">
-        <a href="penetration-testing.html" class="service-card-link">
-            <h3>Penetration Testing</h3>
-            <p>Simulated attacks, run manually, that confirm real-world impact.</p>
-            <span class="arrow">Read more &rarr;</span>
-        </a>
-        <a href="vulnerability-assessment.html" class="service-card-link">
-            <h3>Vulnerability Assessment</h3>
-            <p>Broader coverage, faster delivery, prioritized by real risk.</p>
-            <span class="arrow">Read more &rarr;</span>
-        </a></div></section>
+      <article class="service-detail" id="internal-red-team">
+        <div class="service-detail-head"><div><h3>Internal Red Team Assessment</h3><p class="service-summary">A white-box, end-to-end assessment of agreed internal assets, using provided system context to identify weaknesses and misconfigurations.</p></div><span class="service-duration">2–4 months</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>Internal Red Team Assessment Report with findings, evidence, business impact, and recommendations; project plan shared before execution.</p></div><div><h4>Engagement outline</h4><p>Kickoff and an information request define the in-scope assets and requirements. Duration depends on scope; reporting follows project closure.</p></div></div>
+      </article>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Synactive</h3>
-                <p>Enterprise cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements. We combine deep technical expertise with industry best practices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="security-testing.html">Security Testing</a></li>
-                    <li><a href="compliance-governance.html">ISO Compliance & Audits</a></li>
-                    <li><a href="ai-security.html">AI Security Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> team@synactive.co</p>
-                <p><strong>Location:</strong> Islamabad, Pakistan</p>
-                <p><strong>Website:</strong> <a href="https://synactive.co">
-    synactive.co
-</a>
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Get Started</a></li>
-                    <li><a href="https://www.linkedin.com/company/synactive-co/" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Disclaimer</a>
-            </div>
-            <p>&copy; 2026 Synactive. All rights reserved. | Enterprise Security & Compliance Solutions</p>
-        </div>
-    </footer>
+      <article class="service-detail" id="web-app-test">
+        <div class="service-detail-head"><div><h3>Web Application Penetration Test</h3><p class="service-summary">Assess only the agreed web applications using a black-box, grey-box, or white-box approach selected with your organization.</p></div><span class="service-duration">1–2 months</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>Web Application Penetration Test Report with findings, evidence, business impact, and recommendations; project plan shared before execution.</p></div><div><h4>Approach</h4><p>Testing follows the OWASP Top 10. A staging or test environment is recommended. Scope and duration are confirmed during kickoff.</p></div></div>
+      </article>
+
+      <article class="service-detail" id="ai-red-team">
+        <div class="service-detail-head"><div><h3>AI Red Team Assessment</h3><p class="service-summary">Evaluate in-scope AI systems for security and safety failures, including risks such as prompt injection, jailbreaks, sensitive data exposure, and excessive agency.</p></div><span class="service-duration">1–2 months</span></div>
+        <div class="service-facts"><div><h4>Deliverable</h4><p>AI Red Team Assessment Report with findings, evidence, business impact, and recommendations; project plan shared before execution.</p></div><div><h4>Approach</h4><p>Choose a black-box, grey-box, or white-box scope. The assessment references OWASP Top 10 for LLM Applications and MITRE ATLAS.</p></div></div>
+        <p class="note">A staging or test environment is recommended to avoid disrupting production systems. Duration depends on scope.</p>
+      </article>
+    </div></section>
+    <section class="section section--compact section--soft"><div class="container"><div class="cta-panel"><div><h2>Make your next assessment count.</h2><p>Share your objectives and in-scope environment. We will discuss the right engagement and boundaries.</p></div><a class="btn btn-primary" href="contact.html?service=External%20Red%20Team%20Assessment#contact-form">Request a scoping call →</a></div></div></section>
+  </main>
+  <footer><div class="footer-content"><div class="footer-section"><h3>Synactive</h3><p>Practical cybersecurity services for organizations securing systems, managing risk, and building trust.</p></div><div class="footer-section"><h3>Service lines</h3><ul><li><a href="security-testing.html">Red Teaming</a></li><li><a href="compliance-governance.html">GRC</a></li><li><a href="blue-teaming.html">Blue Teaming</a></li><li><a href="cybersecurity-consulting.html">Consulting</a></li></ul></div><div class="footer-section"><h3>Explore</h3><ul><li><a href="services.html">All services</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Insights</a></li></ul></div><div class="footer-section"><h3>Contact</h3><p><a href="mailto:team@synactive.co">team@synactive.co</a></p><p>Islamabad, Pakistan</p></div></div><div class="footer-bottom"><p>© 2026 Synactive. All rights reserved.</p></div></footer>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>

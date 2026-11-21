@@ -4,42 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Synactive</title>
-    <link rel="stylesheet" href="/assets/style.css"> 
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="main-header">
-      <a href="/index.html" class="brand-logo">
-        <img src="/synactive-logo.png" alt="Synactive" class="logo-icon">
-      </a>
-      <div class="header-right">
-        <nav>
-          <a href="/index.html">Home</a>
-          <div class="dropdown">
-            <a href="/services.html">Services</a>
-            <div class="dropdown-content">
-              <a href="/security-testing.html">Security Testing</a>
-              <a href="/compliance-governance.html">Compliance & Governance</a>
-              <a href="/ai-security.html">AI Security</a>
-            </div>
-          </div>
-          <a href="/about.html">About</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="main-header"><div class="header-content">
+  <a href="index.html" class="brand-logo" aria-label="Synactive home"><img src="synactive-logo.png" alt="Synactive" class="logo-icon"></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+  <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <details class="nav-dropdown"><summary>Services</summary><div class="dropdown-content">
+      <a href="services.html">All services</a><a href="security-testing.html">Red Teaming</a><a href="compliance-governance.html">Governance, Risk &amp; Compliance</a><a href="blue-teaming.html">Blue Teaming</a><a href="cybersecurity-consulting.html">Cybersecurity Consulting</a>
+    </div></details>
+    <a href="about.html">About</a><a href="blog.html">Insights</a><a href="contact.html" class="nav-cta">Talk to our team</a>
+  </nav>
+</div></header>
 
     <!-- BLOG HERO -->
-    <section class="page-hero" style="text-align: center; padding: 80px 20px;">
+    <section id="main" class="page-hero" style="text-align: center; padding: 80px 20px;">
         <h1 style="color: white; font-size: 2.5rem; margin-bottom: 15px;">Insights & Security News</h1>
         <p style="color: #a0aec0; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Expert perspectives on AI security, compliance frameworks, and the latest vulnerability trends.</p>
     </section>
 
     <!-- BLOG GRID -->
     <section class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; padding: 0 20px 80px;">
-        
+
        <!-- Blog Post 1 -->
 <article class="blog-card" style="background: #0a1527; border-radius: 8px; overflow: hidden; border: 1px solid rgba(12, 188, 185, 0.1); transition: transform 0.3s ease;">
     <div style="padding: 25px;">
@@ -232,46 +222,16 @@
 
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Synactive</h3>
-                <p>Enterprise cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements. We combine deep technical expertise with industry best practices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="/security-testing.html">Security Testing</a></li>
-                    <li><a href="/compliance-governance.html">ISO Compliance & Audits</a></li>
-                    <li><a href="/ai-security.html">AI Security Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> team@synactive.co</p>
-                <p><strong>Location:</strong> Islamabad, Pakistan</p>
-                <p><strong>Website:</strong> <a href="https://synactive.co">synactive.co</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/index.html#services">Services</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Get Started</a></li>
-                    <li><a href="https://www.linkedin.com/company/synactive-co/" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Disclaimer</a>
-            </div>
-            <p>&copy; 2026 Synactive. All rights reserved. | Enterprise Security & Compliance Solutions</p>
-        </div>
-    </footer>
+  <div class="footer-content">
+    <div class="footer-section"><h3>Synactive</h3><p>Practical cybersecurity services for organizations securing systems, managing risk, and building trust.</p></div>
+    <div class="footer-section"><h3>Service lines</h3><ul><li><a href="security-testing.html">Red Teaming</a></li><li><a href="compliance-governance.html">Governance, Risk &amp; Compliance</a></li><li><a href="blue-teaming.html">Blue Teaming</a></li><li><a href="cybersecurity-consulting.html">Consulting</a></li></ul></div>
+    <div class="footer-section"><h3>Explore</h3><ul><li><a href="services.html">All services</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Insights</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-section"><h3>Contact</h3><p><a href="mailto:team@synactive.co">team@synactive.co</a></p><p>Islamabad, Pakistan</p><p><a href="https://www.linkedin.com/company/synactive-co/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Synactive. All rights reserved.</p></div>
+</footer>
 
+<script src="assets/site.js" defer></script>
 </body>
 </html>

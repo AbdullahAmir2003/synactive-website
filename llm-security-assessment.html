@@ -1,187 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LLM Security Assessment | Synactive</title>
-<link rel="stylesheet" href="assets/style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The current related service is AI Red Team Assessment, covering in-scope AI systems and applications. A staging or test environment is recommended.">
+  <meta name="theme-color" content="#07151d">
+  <title>LLM Security Assessment | Synactive</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-    <!-- HEADER -->
-<header class="main-header">
-  <!-- Brand Logo Only -->
-  <a href="index.html" class="brand-logo">
-    <img src="synactive-logo.png" alt="Synactive" class="logo-icon">
-  </a>
-
-  <!-- Navigation & CTA -->
-  <div class="header-right">
-    <nav>
-      <a href="index.html">Home</a>
-
-      <div class="dropdown">
-        <a href="services.html">Services</a>
-        <div class="dropdown-content">
-          <a href="security-testing.html">Security Testing</a>
-          <a href="compliance-governance.html">Compliance & Governance</a>
-          <a href="ai-security.html">AI Security</a>
-        </div>
-      </div>
-
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<p class="breadcrumb"><a href="ai-security.html">AI Security</a> &nbsp;/&nbsp; LLM Security Assessment</p>
-    <section class="hero">
-        <div class="hero-inner">
-            <span class="eyebrow">AI SECURITY / LLM SECURITY ASSESSMENT<span class="cursor"></span></span>
-            <h1>Know Where Your AI Systems Can Be Broken</h1>
-            <p class="subhead">A structured assessment of your LLM-powered applications for the risks that matter, prompt injection, data leakage, jailbreaking, and unauthorized access to underlying systems.</p>
-            <div class="hero-ctas"><a href="#request" class="btn btn-primary">Request an LLM Security Assessment</a></div>
-        </div>
-    </section>
-<section><h2>What's included</h2><ul class="checklist"><li>Prompt injection and jailbreak testing</li><li>Data leakage assessment (training data, system prompts, sensitive context)</li><li>Access control testing for AI-integrated systems and tool use</li><li>Output manipulation and abuse-case testing</li><li>Detailed report with prioritized findings and remediation guidance</li></ul></section><section><h2>Our process</h2><div class="process">
-        <div class="process-step">
-            <div class="process-num">01</div>
-            <div>
-                <div class="process-title">Scoping</div>
-                <div class="process-desc">Map the AI system's architecture and data flows.</div>
-            </div>
-        </div>
-        <div class="process-step">
-            <div class="process-num">02</div>
-            <div>
-                <div class="process-title">Testing</div>
-                <div class="process-desc">Manual adversarial testing against known and emerging LLM attack patterns.</div>
-            </div>
-        </div>
-        <div class="process-step">
-            <div class="process-num">03</div>
-            <div>
-                <div class="process-title">Reporting</div>
-                <div class="process-desc">Prioritized findings mapped to real business impact.</div>
-            </div>
-        </div></div></section><section><h2>Who it's for</h2><div class="callout"><span class="label">Fit</span>Companies deploying LLM-powered products, chatbots, or internal AI tools that touch sensitive data or make consequential decisions.</div></section>
-
-    <section class="form-section" id="request">
-        <div class="form-wrap">
-            <h2>Talk to an AI Security Expert</h2>
-            <p class="form-intro">Tell us what you've built and where it's deployed, we'll scope the right assessment or engagement.</p>
-            <form class="lead-form" action="https://formspree.io/f/mojgnezn" method="POST">
-    
-    <input type="hidden" name="Form_Source" value="LLM Security Assessment Page">
-    
-    <div class="form-group">
-        <label for="organization">Organization * </label>
-        <input type="text" id="organization" name="organization" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Email * </label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="app_type">AI Application Type *</label>
-        <select id="app_type" name="app_type" required>
-            <option value="">Select…</option>
-            <option value="Internal LLM">Internal LLM</option>
-            <option value="Customer Chatbot">Customer Chatbot</option>
-            <option value="RAG Application">RAG Application</option>
-            <option value="AI Agent">AI Agent</option>
-            <option value="Other">Other</option>
-        </select>
-    </div>
-    
-    <div class="form-group">
-        <label for="provider">AI Provider</label>
-        <select id="provider" name="provider">
-            <option value="">Select…</option>
-            <option value="OpenAI">OpenAI</option>
-            <option value="Anthropic">Anthropic</option>
-            <option value="Gemini">Gemini</option>
-            <option value="Azure OpenAI">Azure OpenAI</option>
-            <option value="Self-hosted">Self-hosted</option>
-            <option value="Other">Other</option>
-        </select>
-    </div>
-    
-    <fieldset>
-        <legend>Concerns</legend>
-        <div class="checkbox-grid">
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Prompt Injection"> Prompt Injection</label>
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Jailbreaks"> Jailbreaks</label>
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Data Leakage"> Data Leakage</label>
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Model Abuse"> Model Abuse</label>
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Compliance"> Compliance</label>
-            <label class="checkbox-item"><input type="checkbox" name="concerns" value="Other"> Other</label>
-        </div>
-    </fieldset>
-    
-    <div class="form-group">
-        <label for="description">Describe your AI environment</label>
-        <textarea id="description" name="description" rows="4"></textarea>
-    </div>
-    
-    <!-- ADDED: name="Consent" and value="Agreed" -->
-    <label class="consent">
-        <input type="checkbox" name="Consent" value="Agreed" required> I agree to be contacted regarding my inquiry.
-    </label>
-    
-    <button type="submit" class="btn btn-primary form-submit">Talk to an Expert</button>
-    
-</form>
-        </div>
-    </section>
-
-        <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Synactive</h3>
-                <p>Enterprise cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements. We combine deep technical expertise with industry best practices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="security-testing.html">Security Testing</a></li>
-                    <li><a href="compliance-governance.html">ISO Compliance & Audits</a></li>
-                    <li><a href="ai-security.html">AI Security Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> team@synactive.co</p>
-                <p><strong>Location:</strong> Islamabad, Pakistan</p>
-                <p><strong>Website:</strong> <a href="https://synactive.co">
-    synactive.co
-</a>
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Get Started</a></li>
-                    <li><a href="https://www.linkedin.com/company/synactive-co/" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Disclaimer</a>
-            </div>
-            <p>&copy; 2026 Synactive. All rights reserved. | Enterprise Security & Compliance Solutions</p>
-        </div>
-    </footer>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="main-header"><div class="header-content">
+    <a href="index.html" class="brand-logo" aria-label="Synactive home"><img src="synactive-logo.png" alt="Synactive" class="logo-icon"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation"><a href="index.html">Home</a><details class="nav-dropdown"><summary>Services</summary><div class="dropdown-content"><a href="services.html">All services</a><a href="security-testing.html">Red Teaming</a><a href="compliance-governance.html">Governance, Risk &amp; Compliance</a><a href="blue-teaming.html">Blue Teaming</a><a href="cybersecurity-consulting.html">Cybersecurity Consulting</a></div></details><a href="about.html">About</a><a href="blog.html">Insights</a><a href="contact.html" class="nav-cta">Talk to our team</a></nav>
+  </div></header>
+  <main id="main" class="site-main">
+    <section class="page-hero"><div class="page-hero-inner">
+      <span class="eyebrow">Legacy service page / Red Teaming</span>
+      <h1>LLM Security Assessment</h1>
+      <p class="subhead">The current related service is AI Red Team Assessment, covering in-scope AI systems and applications. A staging or test environment is recommended.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="security-testing.html#ai-red-team">View current service details →</a><a class="btn btn-ghost" href="contact.html?service=AI%20Red%20Team%20Assessment#contact-form">Ask about this service</a></div>
+    </div></section>
+    <section class="section section--compact"><div class="narrow-container"><div class="service-detail">
+      <span class="eyebrow">Current portfolio / Red Teaming</span>
+      <h2>Explore the current service scope</h2>
+      <p class="service-summary">The current related service is AI Red Team Assessment, covering in-scope AI systems and applications. A staging or test environment is recommended.</p>
+      <p class="card-link"><a href="security-testing.html#ai-red-team">Go to Red Teaming service details →</a></p>
+    </div></div></section>
+    <section class="form-section" id="request"><div class="form-wrap">
+      <h2>Ask about LLM Security Assessment</h2>
+      <p class="form-intro">Share your requirements and our team will follow up to discuss the current service scope.</p>
+      <form class="lead-form" action="https://formspree.io/f/mojgnezn" method="POST">
+        <input type="hidden" name="Form_Source" value="LLM Security Assessment Compatibility Page">
+        <input type="hidden" name="Service_Interest" value="AI Red Team Assessment">
+        <div class="form-row"><div class="form-group"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div><div class="form-group"><label for="company">Company</label><input id="company" name="company" autocomplete="organization"></div></div>
+        <div class="form-group"><label for="email">Work email</label><input id="email" type="email" name="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="notes">What would you like to discuss?</label><textarea id="notes" name="notes" rows="4"></textarea></div>
+        <label class="consent"><input type="checkbox" name="Consent" value="Agreed" required> I agree to be contacted regarding my inquiry.</label>
+        <button type="submit" class="btn btn-primary form-submit">Send inquiry →</button>
+      </form>
+    </div></section>
+  </main>
+  <footer><div class="footer-content"><div class="footer-section"><h3>Synactive</h3><p>Practical cybersecurity services for organizations securing systems, managing risk, and building trust.</p></div><div class="footer-section"><h3>Service lines</h3><ul><li><a href="security-testing.html">Red Teaming</a></li><li><a href="compliance-governance.html">Governance, Risk &amp; Compliance</a></li><li><a href="blue-teaming.html">Blue Teaming</a></li><li><a href="cybersecurity-consulting.html">Consulting</a></li></ul></div><div class="footer-section"><h3>Explore</h3><ul><li><a href="services.html">All services</a></li><li><a href="about.html">About</a></li><li><a href="blog.html">Insights</a></li></ul></div><div class="footer-section"><h3>Contact</h3><p><a href="mailto:team@synactive.co">team@synactive.co</a></p><p>Islamabad, Pakistan</p></div></div><div class="footer-bottom"><p>© 2026 Synactive. All rights reserved.</p></div></footer>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>

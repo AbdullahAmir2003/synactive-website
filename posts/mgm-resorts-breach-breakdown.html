@@ -8,33 +8,23 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="main-header">
-      <a href="/index.html" class="brand-logo">
-        <img src="/synactive-logo.png" alt="Synactive" class="logo-icon">
-      </a>
-      <div class="header-right">
-        <nav>
-          <a href="/index.html">Home</a>
-          <div class="dropdown">
-            <a href="/services.html">Services</a>
-            <div class="dropdown-content">
-              <a href="/security-testing.html">Security Testing</a>
-              <a href="/compliance-governance.html">Compliance & Governance</a>
-              <a href="/ai-security.html">AI Security</a>
-            </div>
-          </div>
-          <a href="/about.html">About</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="main-header"><div class="header-content">
+  <a href="../index.html" class="brand-logo" aria-label="Synactive home"><img src="../synactive-logo.png" alt="Synactive" class="logo-icon"></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+  <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
+    <a href="../index.html">Home</a>
+    <details class="nav-dropdown"><summary>Services</summary><div class="dropdown-content">
+      <a href="../services.html">All services</a><a href="../security-testing.html">Red Teaming</a><a href="../compliance-governance.html">Governance, Risk &amp; Compliance</a><a href="../blue-teaming.html">Blue Teaming</a><a href="../cybersecurity-consulting.html">Cybersecurity Consulting</a>
+    </div></details>
+    <a href="../about.html">About</a><a href="../blog.html">Insights</a><a href="../contact.html" class="nav-cta">Talk to our team</a>
+  </nav>
+</div></header>
 
     <!-- ARTICLE CONTAINER -->
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px 80px; color: #cbd5e1;">
+    <main id="main" style="max-width: 800px; margin: 40px auto; padding: 0 20px 80px; color: #cbd5e1;">
         <p style="margin-bottom: 20px;"><a href="/blog.html" style="color: #0cbcb9; text-decoration: none;">&larr; Back to All Articles</a></p>
-        
+
         <span style="color: #0cbcb9; font-size: 0.85rem; font-weight: bold; text-transform: uppercase;">Industry / Breach Analysis</span>
         <h1 style="color: white; font-size: 2.3rem; margin: 10px 0 20px; line-height: 1.2;">Breach Breakdown: How the MGM Resorts Cyberattack Happened—and What Could've Stopped It</h1>
         <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 40px;">Published by Synactive Security Team · 5 min read</p>
@@ -44,13 +34,13 @@
             <p>In September 2023, MGM Resorts International suffered one of the most disruptive cyberattacks in recent years. Hotel room keys stopped working, slot machines went offline, reservation systems failed, and guests experienced widespread service disruptions across multiple properties.</p>
             <p>What's striking is that the attackers didn't rely on a sophisticated zero-day exploit. Instead, they exploited a common weakness found in many organizations: identity and human processes.</p>
             <p>Let's break down how the attack unfolded and the security controls that could have reduced its impact.</p>
-            
+
             <h2 style="color: white; margin-top: 20px;">Company Overview</h2>
             <p>MGM Resorts is one of the world's largest hospitality and entertainment companies, operating casinos, hotels, and resorts across the United States.</p>
             <p>Because of its size and reliance on interconnected digital systems, even a brief disruption had significant operational and financial consequences.</p>
 
             <h2 style="color: white; margin-top: 20px;">Attack Timeline</h2>
-            
+
             <h3 style="color: white; margin-top: 15px;">Phase 1 — Reconnaissance</h3>
             <p>The attackers gathered publicly available information about MGM employees through sources such as LinkedIn and other online platforms.</p>
             <p>Their goal was to identify employees and understand the organization's structure before making contact.</p>
@@ -139,31 +129,16 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Synactive</h3>
-                <p>Enterprise cybersecurity and compliance solutions designed to protect your business and meet regulatory requirements.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="/security-testing.html">Security Testing</a></li>
-                    <li><a href="/compliance-governance.html">ISO Compliance & Audits</a></li>
-                    <li><a href="/ai-security.html">AI Security Solutions</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><strong>Email:</strong> team@synactive.co</p>
-                <p><strong>Location:</strong> Islamabad, Pakistan</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Synactive. All rights reserved.</p>
-        </div>
-    </footer>
+  <div class="footer-content">
+    <div class="footer-section"><h3>Synactive</h3><p>Practical cybersecurity services for organizations securing systems, managing risk, and building trust.</p></div>
+    <div class="footer-section"><h3>Service lines</h3><ul><li><a href="../security-testing.html">Red Teaming</a></li><li><a href="../compliance-governance.html">Governance, Risk &amp; Compliance</a></li><li><a href="../blue-teaming.html">Blue Teaming</a></li><li><a href="../cybersecurity-consulting.html">Consulting</a></li></ul></div>
+    <div class="footer-section"><h3>Explore</h3><ul><li><a href="../services.html">All services</a></li><li><a href="../about.html">About</a></li><li><a href="../blog.html">Insights</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    <div class="footer-section"><h3>Contact</h3><p><a href="mailto:team@synactive.co">team@synactive.co</a></p><p>Islamabad, Pakistan</p><p><a href="https://www.linkedin.com/company/synactive-co/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></p></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Synactive. All rights reserved.</p></div>
+</footer>
 
+<script src="../assets/site.js" defer></script>
 </body>
 </html>
