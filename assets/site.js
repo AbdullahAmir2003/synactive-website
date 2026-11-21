@@ -202,6 +202,14 @@ const beamObserver = 'IntersectionObserver' in window
         });
     })
     : null;
+const beamResizeObserver = 'ResizeObserver' in window
+    ? new ResizeObserver((entries) => {
+        entries.forEach((entry) => {
+            const beam = entry.target.querySelector(':scope > .border-beam');
+            if (beam) beam.style.height = `${entry.target.clientHeight}px`;
+        });
+    })
+    : null;
 
 siteTiles.forEach((card) => {
     card.classList.add('site-tile');
@@ -221,10 +229,22 @@ beamTiles.forEach((card) => {
         beam.setAttribute('aria-hidden', 'true');
         card.append(beam);
     }
+    beam.style.height = `${card.clientHeight}px`;
 
     if (!prefersReducedMotion) {
         if (beamObserver) beamObserver.observe(card);
         else beam.classList.add('is-active');
+    }
+
+    if (beamResizeObserver) {
+        beamResizeObserver.observe(card);
+    } else {
+        const syncBeamHeight = () => {
+            beam.style.height = `${card.clientHeight}px`;
+        };
+        card.addEventListener('toggle', syncBeamHeight);
+        card.addEventListener('transitionend', syncBeamHeight);
+        window.addEventListener('resize', syncBeamHeight);
     }
 });
 

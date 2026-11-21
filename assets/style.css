@@ -184,10 +184,15 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .site-ending .explore-section { background: transparent; }
 .beam-tile > .border-beam {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
     z-index: 3;
+    height: 0;
     overflow: hidden;
     padding: 1px;
+    box-sizing: border-box;
     border-radius: inherit;
     pointer-events: none;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
