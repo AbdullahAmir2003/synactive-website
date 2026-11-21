@@ -72,7 +72,6 @@
                 speed: 0.3 + random() * 0.8,
                 rise: 0.08 + random() * 0.16,
                 drift: random() * Math.PI * 2,
-                sparkle: tone === 3 ? random() < 0.32 : random() < 0.035,
             };
         });
     };
@@ -140,25 +139,6 @@
             context.fillStyle = colors[particle.tone];
             context.globalAlpha = alpha;
             context.fillRect(cx + x * radius - size / 2, cy + y * radius - size / 2, size, size);
-        });
-        particles.forEach((particle) => {
-            if (!particle.sparkle) return;
-            const phase = (particle.phase + particleTime * particle.speed * 0.12) % 1;
-            const lift = Math.sin(phase * Math.PI) * particle.rise;
-            const x = particle.x + Math.sin(particleTime * particle.speed + particle.drift) * 0.008;
-            const y = particle.y - lift;
-            const twinkle = Math.pow(Math.max(0, Math.sin(particleTime * (5 + particle.speed * 8) + particle.drift)), 16);
-            if (twinkle < 0.82 || x * x + y * y > 0.96) return;
-            const sparkleSize = particle.size * (2 + twinkle * 2.5);
-            context.globalAlpha = 0.35 + twinkle * 0.65;
-            context.strokeStyle = '#d5fff5';
-            context.lineWidth = Math.max(0.7, particle.size * 0.3);
-            context.beginPath();
-            context.moveTo(cx + x * radius - sparkleSize, cy + y * radius);
-            context.lineTo(cx + x * radius + sparkleSize, cy + y * radius);
-            context.moveTo(cx + x * radius, cy + y * radius - sparkleSize);
-            context.lineTo(cx + x * radius, cy + y * radius + sparkleSize);
-            context.stroke();
         });
         context.restore();
 

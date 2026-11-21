@@ -220,17 +220,8 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 }
 .data-pixel-arc canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .65s ease; }
 .data-pixel-arc.is-active canvas { opacity: 1; }
-.explore-items {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(2rem, 7vw, 6rem);
-    margin-top: 1.7rem;
-}
-.explore-item .line-count { display: block; margin-bottom: 1rem; color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.explore-item h3 { margin: 0 0 .65rem; color: var(--white); font: 700 clamp(1.2rem, 2.2vw, 1.5rem)/1.3 var(--font-display); letter-spacing: -.025em; }
-.explore-item p { max-width: 34rem; margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
-.explore-item > a { display: inline-flex; margin-top: 1rem; color: var(--accent); font-weight: 700; text-decoration: none; }
-.explore-item > a:hover { color: #a7f5e5; }
+.explore-section .section-heading { margin-bottom: 0; }
+.explore-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.5rem; }
 .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -1109,7 +1100,6 @@ main[style*="max-width: 800px"] > div[style*="background: #0a1527"] p { color: v
     .hero h1, .hero-content h1, .page-hero h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
     .section { padding: 3.75rem 0; }
     .card-grid, .service-grid, .line-grid, .blog-grid, .services-grid { grid-template-columns: 1fr; gap: .8rem; }
-    .explore-items { grid-template-columns: 1fr; gap: 2rem; }
     .service-line-summary { min-height: 5.2rem; }
     .service-line-heading h2 { font-size: clamp(1rem, 5vw, 1.25rem); }
     .service-line-count { font-size: .72rem; }
