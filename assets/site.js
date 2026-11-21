@@ -32,6 +32,31 @@ document.querySelectorAll('.line-card, .service-card-link, .service-card, .servi
     });
 });
 
+document.querySelectorAll('.service-detail-collapsible').forEach((card) => {
+    const summary = card.querySelector('summary');
+    if (!summary) return;
+
+    card.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'mouse' || card.open) return;
+        card.open = true;
+        card.dataset.hoverOpen = 'true';
+    });
+
+    const closeHoverOpen = () => {
+        if (card.dataset.hoverOpen !== 'true' || card.matches(':hover') || card.contains(document.activeElement)) return;
+        card.open = false;
+        delete card.dataset.hoverOpen;
+    };
+
+    card.addEventListener('pointerleave', closeHoverOpen);
+    card.addEventListener('focusout', () => window.requestAnimationFrame(closeHoverOpen));
+    summary.addEventListener('click', (event) => {
+        if (card.dataset.hoverOpen !== 'true') return;
+        event.preventDefault();
+        delete card.dataset.hoverOpen;
+    });
+});
+
 const serviceInterest = document.getElementById('service-interest');
 const requestedService = new URLSearchParams(window.location.search).get('service');
 if (serviceInterest && requestedService) {
