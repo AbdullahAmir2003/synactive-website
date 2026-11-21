@@ -174,9 +174,9 @@
         gl.uniform1f(uniforms.fill, 0.69);
         gl.uniform1f(uniforms.hover, 0.52);
         gl.uniform1f(uniforms.reach, Math.min(width, height) / pixelRatio * 0.28);
-        gl.uniform1f(uniforms.center, 0.78);
-        gl.uniform1f(uniforms.drop, 0.12);
-        gl.uniform1f(uniforms.thickness, 0.34);
+        gl.uniform1f(uniforms.center, 0.68);
+        gl.uniform1f(uniforms.drop, 0.2);
+        gl.uniform1f(uniforms.thickness, 0.42);
         gl.uniform1f(uniforms.falloff, 6);
         gl.uniform3f(uniforms.background, 0, 0, 0);
         gl.uniform3f(uniforms.base, 8 / 255, 76 / 255, 69 / 255);
