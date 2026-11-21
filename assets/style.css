@@ -594,8 +594,18 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     scroll-margin-top: calc(var(--header-height) + 1rem);
     transition: border-color .25s ease, box-shadow .25s ease;
 }
+#services .service-line,
+#services .service-detail,
+#services .week-pill {
+    background: #000;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
 .service-line:hover,
 .service-line[open] { border-color: rgba(82,216,191,.48); box-shadow: inset 0 1px 0 rgba(255,255,255,.19), 0 22px 54px rgba(0,0,0,.3), 0 0 30px rgba(82,216,191,.06); }
+#services .service-line:hover,
+#services .service-line[open] { box-shadow: 0 22px 54px rgba(0,0,0,.3), 0 0 30px rgba(82,216,191,.06); }
 .service-line-summary {
     display: flex;
     align-items: center;
