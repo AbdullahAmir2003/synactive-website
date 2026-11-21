@@ -402,6 +402,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .site-nav .nav-cta.fx-button > .btn-icon,
 .site-nav .nav-cta.fx-button > .circle-overlay { width: 1.9rem; height: 1.9rem; }
 .site-nav .nav-cta.fx-button > .btn-icon { flex-basis: 1.9rem; }
+.site-nav .nav-cta.fx-button > .circle-overlay { right: .4rem; }
 .site-nav .nav-cta.fx-button:hover > .circle-overlay,
 .site-nav .nav-cta.fx-button:focus-visible > .circle-overlay { width: calc(100% - 1.3rem); }
 .service-card-new > a.fx-button {
