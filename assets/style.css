@@ -70,30 +70,6 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     transition: transform .28s ease;
 }
 .main-header.is-collapsed { transform: translateY(-105%); }
-.nav-reveal-toggle {
-    position: fixed;
-    top: .55rem;
-    right: clamp(1rem, 4vw, 3.25rem);
-    z-index: 1001;
-    display: grid;
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    padding: 0;
-    color: var(--ink);
-    background: var(--accent);
-    border: 0;
-    border-radius: 50%;
-    font-size: 1.35rem;
-    line-height: 1;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-150%);
-    transition: opacity .2s ease, transform .25s ease;
-}
-.nav-reveal-toggle.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.nav-reveal-toggle:focus-visible { outline-offset: 3px; }
 .header-content {
     width: min(100%, var(--content-width));
     min-height: var(--header-height);

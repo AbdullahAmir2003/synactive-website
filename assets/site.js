@@ -27,25 +27,9 @@ document.querySelectorAll('.menu-toggle').forEach((button) => {
 const siteHeader = document.querySelector('.main-header');
 if (siteHeader) {
     const navigation = siteHeader.querySelector('.site-nav');
-    const revealButton = document.createElement('button');
-    revealButton.className = 'nav-reveal-toggle';
-    revealButton.type = 'button';
-    revealButton.textContent = '⌄';
-    revealButton.setAttribute('aria-label', 'Show navigation');
-    if (!siteHeader.id) siteHeader.id = 'site-header';
-    revealButton.setAttribute('aria-controls', siteHeader.id);
-    revealButton.setAttribute('aria-expanded', 'false');
-    revealButton.setAttribute('aria-hidden', 'true');
-    revealButton.tabIndex = -1;
-    document.body.append(revealButton);
-
     const setHeaderCollapsed = (collapsed) => {
         siteHeader.classList.toggle('is-collapsed', collapsed);
         siteHeader.inert = collapsed;
-        revealButton.classList.toggle('is-visible', collapsed);
-        revealButton.setAttribute('aria-expanded', String(!collapsed));
-        revealButton.setAttribute('aria-hidden', String(!collapsed));
-        revealButton.tabIndex = collapsed ? 0 : -1;
     };
 
     let lastScrollY = window.scrollY;
@@ -66,11 +50,6 @@ if (siteHeader) {
             scrollPending = false;
         });
     }, { passive: true });
-
-    revealButton.addEventListener('click', () => {
-        setHeaderCollapsed(false);
-        lastScrollY = window.scrollY;
-    });
 }
 
 document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container').forEach((card) => {
