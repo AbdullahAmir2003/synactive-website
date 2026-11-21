@@ -396,11 +396,14 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     min-height: 44px;
     padding: .25rem .4rem .25rem .9rem;
     border: 1px solid var(--accent);
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
 }
-.site-nav .nav-cta.fx-button:hover { color: var(--ink); background: #86ead7; border-color: #86ead7; transform: translateY(-2px); }
+.site-nav .nav-cta.fx-button:hover { color: var(--ink); background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
 .site-nav .nav-cta.fx-button > .btn-icon,
 .site-nav .nav-cta.fx-button > .circle-overlay { width: 1.9rem; height: 1.9rem; }
 .site-nav .nav-cta.fx-button > .btn-icon { flex-basis: 1.9rem; }
+.site-nav .nav-cta.fx-button:hover > .circle-overlay,
+.site-nav .nav-cta.fx-button:focus-visible > .circle-overlay { width: calc(100% - 1.3rem); }
 .service-card-new > a.fx-button {
     min-height: 44px;
     margin-top: 1.1rem;
