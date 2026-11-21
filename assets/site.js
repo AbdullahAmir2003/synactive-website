@@ -28,6 +28,10 @@ const siteHeader = document.querySelector('.main-header');
 if (siteHeader) {
     const navigation = siteHeader.querySelector('.site-nav');
     const setHeaderCollapsed = (collapsed) => {
+        if (collapsed) {
+            if (siteHeader.contains(document.activeElement)) document.activeElement.blur?.();
+            navigation?.querySelectorAll('details[open]').forEach((dropdown) => { dropdown.open = false; });
+        }
         siteHeader.classList.toggle('is-collapsed', collapsed);
         siteHeader.inert = collapsed;
     };
@@ -41,7 +45,7 @@ if (siteHeader) {
             const currentScrollY = window.scrollY;
             if (currentScrollY <= siteHeader.offsetHeight) {
                 setHeaderCollapsed(false);
-            } else if (currentScrollY > lastScrollY + 8 && !navigation?.classList.contains('is-open') && !siteHeader.contains(document.activeElement)) {
+            } else if (currentScrollY > lastScrollY + 8 && !navigation?.classList.contains('is-open')) {
                 setHeaderCollapsed(true);
             } else if (currentScrollY < lastScrollY - 8) {
                 setHeaderCollapsed(false);
