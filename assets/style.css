@@ -153,7 +153,7 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
 .narrow-container { width: min(calc(100% - 2.5rem), 840px); margin-inline: auto; }
 .section { padding: clamp(4rem, 8vw, 7rem) 0; }
 .section--compact { padding: clamp(3rem, 5vw, 4.5rem) 0; }
-.section--paper { color: var(--dark-text); background: var(--paper); }
+.section--paper { color: var(--text); background: var(--ink-soft); }
 .section--soft { background: var(--ink-soft); }
 .section-heading { max-width: 720px; margin-bottom: 2.5rem; }
 .section-heading h2 {
@@ -162,9 +162,9 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     font: 700 clamp(1.9rem, 4vw, 3.15rem)/1.12 var(--font-display);
     letter-spacing: -.045em;
 }
-.section--paper .section-heading h2 { color: var(--dark-text); }
+.section--paper .section-heading h2 { color: var(--white); }
 .section-heading p { max-width: 660px; margin: 0; color: var(--muted); font-size: 1.05rem; }
-.section--paper .section-heading p { color: var(--dark-muted); }
+.section--paper .section-heading p { color: var(--muted); }
 .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -636,29 +636,30 @@ footer {
 .blog-card a:hover { color: #a7f5e5 !important; }
 .blog-grid { width: min(calc(100% - 2.5rem), var(--content-width)); margin: 0 auto; padding: 0 0 5rem !important; }
 
-/* Preserve the current article URLs and content while giving long-form reading a calm canvas. */
+/* Preserve the current article URLs and content while matching the site's dark palette. */
 main[style*="max-width: 800px"] {
     width: min(calc(100% - 2.5rem), 860px) !important;
     max-width: 860px !important;
     margin: 3rem auto !important;
     padding: clamp(1.25rem, 4vw, 3rem) !important;
-    color: var(--dark-text) !important;
-    background: var(--paper) !important;
+    color: var(--text) !important;
+    background: var(--ink-soft) !important;
     border-radius: 20px;
 }
 main[style*="max-width: 800px"] h1,
 main[style*="max-width: 800px"] h2,
-main[style*="max-width: 800px"] h3 { color: var(--dark-text) !important; }
+main[style*="max-width: 800px"] h3 { color: var(--white) !important; }
 main[style*="max-width: 800px"] p,
 main[style*="max-width: 800px"] li,
-main[style*="max-width: 800px"] div[style*="line-height"] { color: #40595b !important; }
-main[style*="max-width: 800px"] a { color: var(--accent-deep) !important; }
+main[style*="max-width: 800px"] div[style*="line-height"] { color: var(--muted) !important; }
+main[style*="max-width: 800px"] li { color: var(--muted) !important; }
+main[style*="max-width: 800px"] a { color: var(--accent) !important; }
 main[style*="max-width: 800px"] > div[style*="background: #0a1527"] {
-    background: #e4efea !important;
-    border-color: rgba(7,142,130,.26) !important;
+    background: var(--panel) !important;
+    border-color: var(--line) !important;
 }
-main[style*="max-width: 800px"] > div[style*="background: #0a1527"] h3 { color: var(--dark-text) !important; }
-main[style*="max-width: 800px"] > div[style*="background: #0a1527"] p { color: var(--dark-muted) !important; }
+main[style*="max-width: 800px"] > div[style*="background: #0a1527"] h3 { color: var(--white) !important; }
+main[style*="max-width: 800px"] > div[style*="background: #0a1527"] p { color: var(--muted) !important; }
 
 .page-hero[style*="text-align: center"] { padding: 6rem 1.25rem 4rem !important; }
 .page-hero[style*="text-align: center"] h1 { max-width: 900px; margin: 0 auto 1rem !important; font-size: clamp(2.5rem, 6vw, 4.7rem) !important; }
