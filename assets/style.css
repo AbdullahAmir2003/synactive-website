@@ -208,7 +208,6 @@ button, a, summary { -webkit-tap-highlight-color: transparent; }
     padding-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 .explore-section > .container { position: relative; z-index: 1; }
-.explore-section .cta-panel { margin-top: clamp(2rem, 4vw, 3rem); }
 .data-pixel-arc {
     position: absolute;
     inset: 0;
