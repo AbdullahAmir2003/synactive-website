@@ -1,5 +1,33 @@
 document.documentElement.classList.add('js-ready');
 
+document.querySelectorAll('.btn, .site-nav .nav-cta, .service-card .service-button, .service-card-new > a').forEach((action) => {
+    const label = action.textContent.trim();
+    if (!label) return;
+
+    const text = document.createElement('span');
+    text.className = 'text';
+    text.textContent = label;
+
+    const icon = document.createElement('span');
+    icon.className = 'btn-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'svg');
+    svg.setAttribute('viewBox', '0 0 1024 1024');
+    svg.setAttribute('focusable', 'false');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M779.180132 473.232045 322.354755 16.406668c-21.413706-21.413706-56.121182-21.413706-77.534887 0-21.413706 21.413706-21.413706 56.122205 0 77.534887l418.057421 418.057421L244.819868 930.057421c-21.413706 21.413706-21.413706 56.122205 0 77.534887 10.706853 10.706853 24.759917 16.059767 38.767955 16.059767s28.061103-5.353938 38.767955-16.059767L779.180132 550.767955C800.593837 529.35425 800.593837 494.64575 779.180132 473.232045z');
+    svg.append(path);
+    icon.append(svg);
+
+    const overlay = document.createElement('span');
+    overlay.className = 'circle-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+
+    action.replaceChildren(text, icon, overlay);
+    action.classList.add('fx-button');
+});
+
 document.querySelectorAll('.menu-toggle').forEach((button) => {
     const navigation = document.getElementById(button.getAttribute('aria-controls'));
     if (!navigation) return;
