@@ -56,7 +56,109 @@ if (siteHeader) {
     }, { passive: true });
 }
 
-document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container').forEach((card) => {
+const serviceLines = Array.from(document.querySelectorAll('.service-line-collapsible'));
+
+const getServiceLineContent = (line) => Array.from(line.children).find((child) => child.classList.contains('service-line-content'));
+
+const closeServiceLine = (line) => {
+    const content = getServiceLineContent(line);
+    if (!content || !line.open || line.dataset.closing === 'true') return;
+    line.dataset.closing = 'true';
+    content.style.gridTemplateRows = '1fr';
+    content.style.opacity = '1';
+    void content.offsetHeight;
+
+    let timeout;
+    const finish = (event) => {
+        if (event && (event.target !== content || event.propertyName !== 'grid-template-rows')) return;
+        window.clearTimeout(timeout);
+        content.removeEventListener('transitionend', finish);
+        line.open = false;
+        delete line.dataset.closing;
+        content.style.removeProperty('grid-template-rows');
+        content.style.removeProperty('opacity');
+    };
+
+    content.addEventListener('transitionend', finish);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        finish();
+    } else {
+        window.requestAnimationFrame(() => {
+            content.style.gridTemplateRows = '0fr';
+            content.style.opacity = '0';
+        });
+        timeout = window.setTimeout(() => finish(), 600);
+    }
+};
+
+const openServiceLine = (line) => {
+    const content = getServiceLineContent(line);
+    if (!content || line.open || line.dataset.closing === 'true') return;
+    content.style.gridTemplateRows = '0fr';
+    content.style.opacity = '0';
+    line.open = true;
+    void content.offsetHeight;
+    window.requestAnimationFrame(() => {
+        content.style.removeProperty('grid-template-rows');
+        content.style.removeProperty('opacity');
+    });
+};
+
+const closeOtherServiceLines = (activeLine) => {
+    serviceLines.forEach((line) => {
+        if (line === activeLine) return;
+        delete line.dataset.pinned;
+        delete line.dataset.hoverOpen;
+        closeServiceLine(line);
+    });
+};
+
+serviceLines.forEach((line) => {
+    const summary = Array.from(line.children).find((child) => child.classList.contains('service-line-summary'));
+    if (!summary) return;
+
+    line.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'mouse' || line.open || line.dataset.closing === 'true') return;
+        closeOtherServiceLines(line);
+        openServiceLine(line);
+        line.dataset.hoverOpen = 'true';
+    });
+
+    const closeHoverOpenLine = () => {
+        if (line.dataset.hoverOpen !== 'true' || line.dataset.pinned === 'true' || line.matches(':hover') || line.contains(document.activeElement)) return;
+        delete line.dataset.hoverOpen;
+        closeServiceLine(line);
+    };
+
+    line.addEventListener('pointerleave', closeHoverOpenLine);
+    line.addEventListener('focusout', () => window.requestAnimationFrame(closeHoverOpenLine));
+    line.addEventListener('click', (event) => {
+        if (!event.target.closest('.service-detail-summary')) return;
+        closeOtherServiceLines(line);
+        delete line.dataset.hoverOpen;
+        line.dataset.pinned = 'true';
+    });
+
+    summary.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (line.dataset.closing === 'true') return;
+        if (line.dataset.hoverOpen === 'true') {
+            delete line.dataset.hoverOpen;
+            line.dataset.pinned = 'true';
+            return;
+        }
+        delete line.dataset.pinned;
+        if (line.open) {
+            closeServiceLine(line);
+        } else {
+            closeOtherServiceLines(line);
+            openServiceLine(line);
+            line.dataset.pinned = 'true';
+        }
+    });
+});
+
+document.querySelectorAll('.line-card, .service-card-link, .service-card, .service-card-new, .blog-card, .service-line, .service-detail, .timeline-step, .week-pill, .about-visual, .cta-panel, .contact-form-container').forEach((card) => {
     card.addEventListener('pointermove', (event) => {
         const bounds = card.getBoundingClientRect();
         card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);

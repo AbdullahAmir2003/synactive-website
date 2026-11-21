@@ -29,9 +29,10 @@ The four service line sections and all 16 service dropdowns appear together on t
 ## Shared assets
 
 - `assets/style.css` — shared responsive design system and legacy page styling
-- `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and animated service disclosures
+- `assets/site.js` — accessible mobile navigation, service-interest preselection, card spotlights, and nested service-line disclosures
 - `assets/light-curtain.js` — interactive, reduced-motion-aware WebGL hero effect
 - `assets/data-pixel-arc.js` — interactive teal pixel arc for the homepage process section
+- `assets/service-energy-ring.js` — responsive, reduced-motion-aware Canvas 2D service-line animation
 - `synactive-logo.png` — site logo
 
 ## React component setup
