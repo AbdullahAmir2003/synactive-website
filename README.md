@@ -20,10 +20,9 @@ Then open `http://localhost:8000`. The site can also be opened with a static hos
 ## Main routes
 
 - `index.html` — homepage and the single expandable service catalog
-- `about.html`, `contact.html`, and `blog.html` — company, contact, and insights
-- `posts/*.html` — published articles
+- `about.html` and `contact.html` — company and contact information
 
-The 16 services are grouped into four expandable sections on the homepage. Former service directory, service-line, and standalone service URLs redirect to their matching homepage section or service card to avoid duplicate content while preserving existing links. The contact forms submit to the existing Formspree endpoint.
+The 16 services are grouped into four expandable sections on the homepage. Former service directory, service-line, standalone service, blog, and article URLs redirect to the homepage or their matching service card to avoid duplicate content while preserving existing links. The contact forms submit to the existing Formspree endpoint.
 
 ## Shared assets
 

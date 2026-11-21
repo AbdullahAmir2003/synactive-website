@@ -142,6 +142,22 @@ document.querySelectorAll('.service-detail-collapsible').forEach((card) => {
     });
 });
 
+const serviceLines = document.querySelectorAll('.service-line');
+if (serviceLines.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const serviceLineObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.08 });
+
+    serviceLines.forEach((section) => {
+        section.classList.add('is-reveal-pending');
+        serviceLineObserver.observe(section);
+    });
+}
+
 const serviceInterest = document.getElementById('service-interest');
 const requestedService = new URLSearchParams(window.location.search).get('service');
 if (serviceInterest && requestedService) {
